@@ -1,0 +1,11 @@
+{
+  "type": "default",
+  "structure": {
+    "header": {
+      "show": "true"
+    },
+    "footer": {
+      "show": "true"
+    }
+  }
+}

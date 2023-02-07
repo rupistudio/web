@@ -1,0 +1,25 @@
+{
+  "projectType": "website",
+  "projectName": "Rupi Beauty Studio",
+  "url": "http://localhost:3000",
+  "subtitle": "✨",
+  "description": "Rupi Beauty Studio proudly offers a multitude of services that will help you look and feel your best! From Threading and Needling to Facials and Waxing, come see us today!",
+  "keywords": "eyebrows, brows, facial, laser, hair-removal, waxing, bikini-wax, brazilian-wax, men’s facials, face-waxing, microneedling, dermaplaning, acne facials (for kids), organic facials",
+  "twitterHandle": "@",
+  "locale": "en-US",
+  "images": [
+    {
+      "url": "https://cdn.jsdelivr.net/gh/rupistudio/assets@main/brand/rupi-new-logo-md.png",
+      "width": 300,
+      "height": 258,
+      "alt": "Rupi Beauty Studio Logo",
+      "type": "image/png"
+    }
+  ],
+  "additionalLinkTags": [
+    {
+      "rel": "icon",
+      "href": "https://cdn.jsdelivr.net/gh/rupistudio/assets@main/brand/rupi-new-logo-md.png"
+    }
+  ]
+}

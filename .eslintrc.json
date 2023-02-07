@@ -1,3 +1,7 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "next/core-web-vitals",
+  "singleQuote": true,
+  "tabWidth": 2,
+  "semi": true,
+  "organizeImportsSkipDestructiveCodeActions": true
 }
