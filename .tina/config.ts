@@ -1,48 +1,22 @@
-import { defineConfig } from "tinacms";
+import { defineConfig } from 'tinacms';
+import { schema } from './schema';
 
 // Your hosting provider likely exposes this as an environment variable
-const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || "main";
+const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main';
 
 export default defineConfig({
-  branch,
-  clientId: "2be3aeb1-9556-497d-aa82-6396880314c6", // Get this from tina.io
-  token: "5896e78ea6a365554946e58d0aba3f70d62af1aa", // Get this from tina.io
+  branch: process.env.NEXT_PUBLIC_TINA_BRANCH || branch,
+  clientId: String(process.env.NEXT_PUBLIC_TINA_CLIENT_ID), // Get this from tina.io
+  token: String(process.env.NEXT_PUBLIC_TINA_READ_ONLY_TOKEN), // Get this from tina.io
   build: {
-    outputFolder: "admin",
-    publicFolder: "public",
+    outputFolder: 'admin',
+    publicFolder: 'public',
   },
   media: {
     tina: {
-      mediaRoot: "",
-      publicFolder: "public",
+      mediaRoot: 'uploads',
+      publicFolder: 'public',
     },
   },
-  schema: {
-    collections: [
-      {
-        name: "post",
-        label: "Posts",
-        path: "content/posts",
-        fields: [
-          {
-            type: "string",
-            name: "title",
-            label: "Title",
-            isTitle: true,
-            required: true,
-          },
-          {
-            type: "rich-text",
-            name: "body",
-            label: "Body",
-            isBody: true,
-          },
-        ],
-        ui: {
-          // This is an DEMO router. You can remove this to fit your site
-          router: ({ document }) => `/demo/blog/${document._sys.filename}`,
-        },
-      },
-    ],
-  },
+  schema,
 });
