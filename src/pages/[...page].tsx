@@ -9,7 +9,13 @@ import type {
 } from 'next';
 
 import client from '.tina/__generated__/client';
-import { AboutBlock, HeroBlock, LocationCTABlock, PageLayout } from '@/components';
+import {
+  AboutBlock,
+  HeroBlock,
+  LocationCTABlock,
+  PageLayout,
+} from '@/components';
+import { ContactBlock } from '@/components/sections/contact';
 import { getBaseUrl } from '@/utils';
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>['props'];
@@ -41,7 +47,8 @@ export const PageBlocks: React.FC<Page> = ({ sections }) => {
               return <AboutBlock {...section} key={section.__typename} />;
             case 'PageSectionsLocationCta':
               return <LocationCTABlock {...section} key={section.__typename} />;
-
+            case 'PageSectionsContact':
+              return <ContactBlock {...section} key={section.__typename} />;
           }
         })}
       <code>{JSON.stringify(sections, null, 2)}</code>
