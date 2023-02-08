@@ -1,32 +1,30 @@
-import React from 'react';
+import { Box, Text } from '@chakra-ui/react';
 
-const colors = [
-  'red',
-  'blue',
-  'green',
-  'orange',
-  'purple',
-  'pink',
-  'brown',
-  'black',
-  'gray',
-];
+export const ResponsiveDebugger: React.FC<{ colors?: string[] }> = ({
+  colors,
+}) => {
+  const borderColors = colors || [
+    'red.400',
+    'green.400',
+    'blue.400',
+    'teal.400',
+  ];
 
-export const ResDebugger = ({ children }: { children: React.ReactNode }) => {
-  const kids = React.Children.map(children, (child) => {
-    if (React.isValidElement(child)) {
-      return React.cloneElement(child as React.ReactElement<any>, {
-        ...child.props,
-        outline: '5px solid',
-        outlineColor: {
-          base: colors[4],
-          sm: colors[3],
-          md: colors[2],
-          lg: colors[1],
-          xl: colors[0],
-        },
-      });
-    }
-  });
-  return <>{kids}</>;
+  return (
+    <>
+      <Box
+        position="absolute"
+        inset="0"
+        zIndex="docked"
+        border="2px"
+        borderColor={borderColors}
+      >
+        {/* <Text display={{ xs: 'block', sm: 'none' }}>xs</Text> */}
+        <Text display={['block', 'none', null]}>sm</Text>
+        <Text display={['none', 'block', 'none']}>md</Text>
+        <Text display={['none', null, 'block', 'none']}>lg</Text>
+        <Text display={['none', null, null, null, 'block']}>xl</Text>
+      </Box>
+    </>
+  );
 };
