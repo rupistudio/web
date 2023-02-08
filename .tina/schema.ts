@@ -8,7 +8,8 @@ export const schema = defineSchema({
     {
       name: 'post',
       label: 'Posts',
-      path: 'content/posts',
+      path: '_content/posts',
+      format: 'mdx',
       fields: [
         {
           type: 'string',
@@ -24,14 +25,14 @@ export const schema = defineSchema({
           isBody: true,
         },
       ],
-      ui: {
-        router: routers.post,
-      },
+      ui: { router: routers.post },
     },
     {
       name: 'page',
       label: 'Pages',
-      path: 'content/pages',
+      path: '_content/pages',
+      format: 'mdx',
+      ui: { router: routers.page },
       fields: page, // Zw7l2
     },
   ],

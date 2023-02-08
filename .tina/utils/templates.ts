@@ -4,6 +4,6 @@ import * as blocks from '../blocks';
 
 // ZWgF2
 export const templates: Record<string, Template[]> = {
-  page: [blocks.about],
+  page: [blocks.about, blocks.hero],
   section: [],
 };

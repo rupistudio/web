@@ -4,21 +4,7 @@ import { fields, templates } from '../utils';
 
 // Zw7l2
 export const page: Collection['fields'] = [
-  {
-    type: 'string',
-    name: 'title',
-    label: 'Page Title (SEO-Friendly 50-70chars.)',
-    required: true,
-  },
-  {
-    type: 'string',
-    name: 'description',
-    label: 'Page Description (SEO-Friendly 150-160chars.)',
-    required: true,
-    ui: {
-      component: 'textarea',
-    },
-  },
+  ...fields.page,
   {
     type: 'object',
     name: 'seo',
@@ -29,7 +15,10 @@ export const page: Collection['fields'] = [
     type: 'object',
     name: 'sections',
     label: 'Sections',
+    list: true,
     ui: { visualSelector: true },
     templates: templates.page, // ZWgF2
   },
+  ...fields.colors,
+  ...fields.layout,
 ];

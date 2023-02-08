@@ -1,5 +1,5 @@
 import type { Template } from 'tinacms';
-import { mapOptions,options } from './options';
+import { mapOptions, options } from './options';
 
 // Zw7l2
 export const fields: Record<string, Template['fields']> = {
@@ -22,13 +22,13 @@ export const fields: Record<string, Template['fields']> = {
   ],
   size: [
     {
-      type: 'number',
+      type: 'string',
       name: 'width',
       label: 'Width',
       options: options.sizes,
     },
     {
-      type: 'number',
+      type: 'string',
       name: 'height',
       label: 'Height',
       options: options.sizes,
@@ -41,7 +41,7 @@ export const fields: Record<string, Template['fields']> = {
       label: 'Update Image',
       ui: {
         defaultItem: {
-          src: '/uploads/assets/placeholder.png',
+          src: '/uploads/assets/placeholder-sq.webp',
           alt: 'Placeholder Image',
           position: 'center center',
         },
@@ -66,6 +66,18 @@ export const fields: Record<string, Template['fields']> = {
           type: 'string',
           name: 'attr',
           label: 'attribution',
+        },
+        {
+          type: 'string',
+          name: 'width',
+          label: 'Width',
+          options: options.sizes,
+        },
+        {
+          type: 'string',
+          name: 'height',
+          label: 'Height',
+          options: options.sizes,
         },
         {
           type: 'string',
