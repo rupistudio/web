@@ -17,7 +17,13 @@ import { FullLogo } from '../../full-logo-block';
 import { Title } from '../../title';
 import { MapContainer, StoreIcon } from '../_shared.components';
 
-export const ContactBlock: FC<PageSectionsContact> = ({
+type ContactBlockProps = {
+  address?: string | null | undefined;
+  locality?: string | null | undefined;
+  phoneNumber?: string | null | undefined;
+};
+
+export const ContactBlock: FC<PageSectionsContact | ContactBlockProps> = ({
   address = '2A Franklin Ave',
   locality = 'Pearl River, N.Y. 10965',
   phoneNumber = '(862) 571-7873',

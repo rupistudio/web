@@ -37,7 +37,7 @@ export default Page;
 
 export const PageBlocks: React.FC<Page> = ({ sections }) => {
   return (
-    <pre>
+    <>
       {sections?.length &&
         sections?.map((section) => {
           switch (section?.__typename) {
@@ -52,7 +52,7 @@ export const PageBlocks: React.FC<Page> = ({ sections }) => {
           }
         })}
       <code>{JSON.stringify(sections, null, 2)}</code>
-    </pre>
+    </>
   );
 };
 

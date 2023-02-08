@@ -40,7 +40,7 @@ export const schema = defineSchema({
       label: 'Services',
       path: '_content/services',
       format: 'mdx',
-      // ui: { router: routers.service },
+      ui: { router: routers.service },
       fields: service, // Zw7l2
     },
   ],
