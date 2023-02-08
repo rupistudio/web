@@ -3,9 +3,9 @@ import { SkipNavContent } from '@chakra-ui/skip-nav';
 import { NextSeo } from 'next-seo';
 import { useEffect } from 'react';
 
-import { EmailCTA } from '../blocks';
+import { EmailCTA } from '../sections';
 
-import { SectionTitle, SocialShare } from '@/components';
+import { Title, SocialShare } from '@/components';
 import {
   Footer,
   Header,
@@ -80,7 +80,7 @@ export const PageLayout: React.FC<LayoutProps> = ({
         {/* {layout?.showCta ? <EmailCTA /> : null} */}
         {/* {layout?.showReviews ? (
           <Box id="reviews" pt={16}>
-            <SectionTitle title="Our Reviews" />
+            <Title title="Our Reviews" />
           </Box>
         ) : null} */}
       </Main>

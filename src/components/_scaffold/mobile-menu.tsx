@@ -13,7 +13,7 @@ import Link from 'next/link';
 import { Drawer } from 'chakra.ui';
 import { MenuIcon } from 'chakra.ui/icons/menu-icon';
 import { FullLogo } from '../full-logo-block';
-import { StoreIcon } from '../blocks/_shared.components';
+import { StoreIcon } from '../sections/_shared.components';
 
 type MenuLink = Record<string, string>;
 const menu: MenuLink = {

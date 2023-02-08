@@ -9,7 +9,7 @@ import type {
 } from 'next';
 
 import client from '.tina/__generated__/client';
-import { PageLayout } from '@/components';
+import { AboutBlock, HeroBlock, PageLayout } from '@/components';
 import { getBaseUrl } from '@/utils';
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>['props'];
@@ -30,15 +30,19 @@ const Page: React.FC<PageProps> = (props) => {
 export default Page;
 
 // type PageData = Page[''];
-export const PageBlocks: React.FC<Page> = (props) => {
+export const PageBlocks: React.FC<Page> = ({ sections }) => {
   return (
     <pre>
-      {/* {sections?.length &&
+      {sections?.length &&
         sections?.map((section) => {
           switch (section?.__typename) {
+            case 'PageSectionsHero':
+              return <HeroBlock {...section} key={section.__typename} />;
+            case 'PageSectionsAbout':
+              return <AboutBlock {...section} key={section.__typename} />;
           }
-        })} */}
-      <code>{JSON.stringify(props, null, 2)}</code>
+        })}
+      <code>{JSON.stringify(sections, null, 2)}</code>
     </pre>
   );
 };

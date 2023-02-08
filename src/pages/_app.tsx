@@ -6,10 +6,14 @@ import Script from 'next/script';
 import type { AppProps, AppType } from 'next/app';
 
 import '@/styles/globals.css';
-import { ErrorBoundary,isProd } from '@/utils';
+import { ErrorBoundary, isProd } from '@/utils';
 import { ChakraWrapper } from 'chakra.ui';
 
-export default function App<AppType>({ Component, pageProps, router }: AppProps) {
+export default function App<AppType>({
+  Component,
+  pageProps,
+  router,
+}: AppProps) {
   function appendScriptOnPage(pagesArray: string[]): boolean {
     return !!pagesArray.filter((page) => {
       if (page === '/') return true;
@@ -28,7 +32,7 @@ export default function App<AppType>({ Component, pageProps, router }: AppProps)
       <SkipNavLink mt={56} ml={4}>
         Skip to content
       </SkipNavLink>
-      {isProd && appendScriptOnPage(['/', '/services']) ? (
+      {isProd && appendScriptOnPage(['']) ? (
         <Script src={process.env.NEXT_PUBLIC_TRUSTMARY} async />
       ) : null}
       <ErrorBoundary>
