@@ -1,7 +1,9 @@
-import type { Collection, Template } from 'tinacms';
-import { fields } from '../utils';
+import type { Collection } from 'tinacms';
 
-export const pages: Collection['fields'] = [
+import { fields, templates } from '../utils';
+
+// Zw7l2
+export const page: Collection['fields'] = [
   {
     type: 'string',
     name: 'title',
@@ -22,5 +24,12 @@ export const pages: Collection['fields'] = [
     name: 'seo',
     label: 'SEO',
     fields: [...fields.page, ...fields.image],
+  },
+  {
+    type: 'object',
+    name: 'sections',
+    label: 'Sections',
+    ui: { visualSelector: true },
+    templates: templates.page, // ZWgF2
   },
 ];

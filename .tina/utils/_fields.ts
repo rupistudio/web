@@ -1,6 +1,7 @@
 import type { Template } from 'tinacms';
-import { mapOptions, options } from './options';
+import { mapOptions,options } from './options';
 
+// Zw7l2
 export const fields: Record<string, Template['fields']> = {
   page: [
     {
