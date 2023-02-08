@@ -7,7 +7,7 @@ export const hero: Template = {
   label: 'Hero Section',
   name: 'hero',
   ui: {
-    previewSrc: '/blocks/preview-hero.webp',
+    previewSrc: '/blocks/preview-hero-composite.webp',
   },
   fields: [
     {
@@ -23,7 +23,7 @@ export const hero: Template = {
     ...fields?.image,
     {
       type: 'string',
-      label: 'Phone Call-to-Action',
+      label: 'CTA: Call-to-Action text',
       name: 'cta',
     },
     {
