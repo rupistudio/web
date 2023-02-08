@@ -1,6 +1,6 @@
 import { defineSchema } from 'tinacms';
 
-import { page, service } from './collections';
+import { page, service, type } from './collections';
 import { routers } from './routers';
 
 export const schema = defineSchema({
@@ -20,6 +20,14 @@ export const schema = defineSchema({
       format: 'mdx',
       ui: { router: routers.service },
       fields: service, // Zw7l2
+    },
+    {
+      name: 'type',
+      label: 'Service Options',
+      path: '_content/types',
+      format: 'mdx',
+      ui: { global: true },
+      fields: type, // Zw7l2
     },
   ],
 });

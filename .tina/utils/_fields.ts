@@ -20,7 +20,7 @@ export const fields: Record<string, Template['fields']> = {
       },
     },
   ],
- service: [
+  service: [
     {
       type: 'string',
       name: 'title',
@@ -41,9 +41,29 @@ export const fields: Record<string, Template['fields']> = {
       name: 'slug',
       label: 'Service Slug (must be all lowercase, with no spaces)',
       required: true,
+    },
+  ],
+  type: [
+    {
+      type: 'string',
+      name: 'title',
+      label: 'Page Title (SEO-Friendly 50-70chars.)',
+      required: true,
+    },
+    {
+      type: 'string',
+      name: 'description',
+      label: 'Page Description (SEO-Friendly 150-160chars.)',
+      required: true,
       ui: {
         component: 'textarea',
       },
+    },
+    {
+      type: 'string',
+      name: 'slug',
+      label: 'Type Slug (must be all lowercase, with no spaces)',
+      required: true,
     },
   ],
   size: [
@@ -107,12 +127,12 @@ export const fields: Record<string, Template['fields']> = {
         //   options: options.sizes,
         //   ui: { parse: (val: string) => val.toString() },
         // },
-        {
-          type: 'string',
-          name: 'position',
-          label: 'Position',
-          options: options.position,
-        },
+        // {
+        //   type: 'string',
+        //   name: 'position',
+        //   label: 'Position',
+        //   options: options.position,
+        // },
       ],
     },
   ],
