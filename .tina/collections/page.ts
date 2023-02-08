@@ -17,7 +17,7 @@ export const page: Collection['fields'] = [
     label: 'Sections',
     list: true,
     ui: { visualSelector: true },
-    templates: templates.page, // ZWgF2
+    templates: [...templates.page, ...templates.service], // ZWgF2
   },
   ...fields.colors,
   ...fields.layout,
