@@ -1,4 +1,4 @@
-import type { Template } from "tinacms";
+import type { Template } from 'tinacms';
 
 // ZWgF2
 export const locationCta: Template = {
@@ -12,6 +12,11 @@ export const locationCta: Template = {
       type: 'string',
       name: 'cta',
       label: 'CTA: Call-to-action text',
-    }
-  ]
+    },
+    {
+      type: 'string',
+      name: 'address',
+      label: 'Full Mailing Address',
+    },
+  ],
 };

@@ -4,7 +4,7 @@ import type { FC } from 'react';
 
 import { Map } from './map';
 
-export const MapContainer: FC<{ address?: string }> = ({
+export const MapContainer: FC<{ address?: string | undefined | null }> = ({
   address = '2A Franklin Ave, Pearl, River, NY 10965',
 }) => {
   return (
