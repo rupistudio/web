@@ -25,7 +25,7 @@ export const Title: FC<Title & HeadingAs> = ({ title, as = 'h1' }) => {
         aria-hidden={true}
       >
         <Image
-          src="/leaves-stem.png"
+          src="/uploads/assets/leaves-stem.png"
           alt="Image by pikisuperstar on Freepik"
           width="453"
           height="242"

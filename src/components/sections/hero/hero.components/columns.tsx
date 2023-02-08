@@ -52,7 +52,7 @@ export const ColumnLeft: FC<{ intro: string; heading: string }> = ({
           zIndex={-1}
         >
           <Image
-            src="/leaf.png"
+            src="/uploads/assets/leaf.png"
             alt="decorative leaf"
             width="188"
             height="190"

@@ -16,7 +16,12 @@ export const Decorators: FC = () => {
         transform="scale(0.6)"
         display={{ base: 'none', lg: 'block' }}
       >
-        <Image src="/rose-petals-set1.png" alt="" width="1200" height="1430" />
+        <Image
+          src="/uploads/assets/rose-petals-set1.png"
+          alt=""
+          width="1200"
+          height="1430"
+        />
       </Box>
       <Box
         w="64"
@@ -28,7 +33,12 @@ export const Decorators: FC = () => {
         transform="scale(0.6)"
         display={{ base: 'none', md: 'block' }}
       >
-        <Image src="/rose-petals-set2.png" alt="" width="1200" height="1430" />
+        <Image
+          src="/uploads/assets/rose-petals-set2.png"
+          alt=""
+          width="1200"
+          height="1430"
+        />
       </Box>
     </>
   );

@@ -1,4 +1,4 @@
-import { Box, Heading, VStack } from '@chakra-ui/react';
+import { Box,Heading,VStack } from '@chakra-ui/react';
 import Image from 'next/image';
 
 import type { PageSections } from '.tina';
@@ -34,7 +34,7 @@ export const TitleBlock: FC<
         aria-hidden={true}
       >
         <Image
-          src="/leaves-stem.png"
+          src="/uploads/assets/leaves-stem.png"
           alt="Image by pikisuperstar on Freepik"
           width="453"
           height="242"

@@ -7,7 +7,7 @@ import { EmailSubscriptionForm } from '../forms';
 export const EmailCTA: React.FC = () => {
   return (
     <Box w="full" my={12}>
-      <StaticScrollBackground bgImage="url(/girl-holding-money-pink-bg.webp)">
+      <StaticScrollBackground bgImage="url(/uploads/people/girl-holding-money-pink-bg.webp)">
         <Container
           mr={[24, null, null, 56]}
           mt={28}
