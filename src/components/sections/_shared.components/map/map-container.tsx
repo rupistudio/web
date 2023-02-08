@@ -5,7 +5,7 @@ import type { FC } from 'react';
 import { Map } from './map';
 
 export const MapContainer: FC<{ address?: string }> = ({
-  address = '24 Rowland Ave Clifton, NJ 07012',
+  address = '2A Franklin Ave, Pearl, River, NY 10965',
 }) => {
   return (
     <Center

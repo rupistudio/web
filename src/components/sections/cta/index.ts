@@ -1,1 +1,2 @@
-export * from "./signup-cta"
+export * from './location-cta-block';
+export * from './signup-cta';
