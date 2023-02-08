@@ -11,6 +11,7 @@ import type {
 import client from '.tina/__generated__/client';
 import {
   AboutBlock,
+  CoreServicesBlock,
   HeroBlock,
   LocationCTABlock,
   PageLayout,
@@ -47,6 +48,10 @@ export const PageBlocks: React.FC<Page> = ({ sections }) => {
               return <AboutBlock {...section} key={section.__typename} />;
             case 'PageSectionsLocationCta':
               return <LocationCTABlock {...section} key={section.__typename} />;
+            case 'PageSectionsCoreServices':
+              return (
+                <CoreServicesBlock {...section} key={section.__typename} />
+              );
             case 'PageSectionsContact':
               return <ContactBlock {...section} key={section.__typename} />;
           }

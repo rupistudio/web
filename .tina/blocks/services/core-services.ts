@@ -1,18 +1,19 @@
 import type { Template } from 'tinacms';
 import { fields } from '../../utils/_fields';
 
-const services = fields.relations.length ? [fields.relations[1]] : [];
+const services = fields.relations.length ? [fields.relations[0]] : [];
 
 export const coreServices: Template = {
   label: 'Featured Services',
   name: 'coreServices',
   ui: {
+    previewSrc: '/blocks/preview-core-services.webp',
     defaultItem: {
       services: [
-        { service: '_content/categories/eyebrows.mdx' },
-        { service: '_content/categories/hair-removal/body-waxing.mdx' },
-        { service: '_content/categories/hair-removal/laser-hair-removal.mdx' },
-        { service: '_content/categories/hair-removal/ipl.mdx' },
+        { service: '_content/services/eyebrows.mdx' },
+        { service: '_content/services/skin-care.mdx' },
+        { service: '_content/services/hair-removal.mdx' },
+        { service: '_content/services/addons/lipo.mdx' },
       ],
     },
   },

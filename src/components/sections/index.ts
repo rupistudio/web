@@ -4,3 +4,4 @@ export * from './forms';
 export * from './hero';
 export * from './title-block'
 export * from './contact'
+export * from "./core-services"
