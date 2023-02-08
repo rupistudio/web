@@ -21,15 +21,14 @@ const Page: React.FC<PageProps> = (props) => {
     data: props.data,
   });
   return (
-    <PageLayout {...props.data.page}>
-      <PageBlocks {...props.data.page} />
+    <PageLayout {...data.page}>
+      <PageBlocks {...data.page} />
     </PageLayout>
   );
 };
 
 export default Page;
 
-// type PageData = Page[''];
 export const PageBlocks: React.FC<Page> = ({ sections }) => {
   return (
     <pre>
@@ -40,6 +39,7 @@ export const PageBlocks: React.FC<Page> = ({ sections }) => {
               return <HeroBlock {...section} key={section.__typename} />;
             case 'PageSectionsAbout':
               return <AboutBlock {...section} key={section.__typename} />;
+
           }
         })}
       <code>{JSON.stringify(sections, null, 2)}</code>
