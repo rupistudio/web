@@ -60,25 +60,27 @@ export const fields: Record<string, Template['fields']> = {
         {
           type: 'string',
           name: 'caption',
-          label: 'Caption (Text that appears below the image))',
+          label: 'Caption (Text that appears below the image)',
         },
         {
           type: 'string',
           name: 'attr',
           label: 'attribution',
         },
-        {
-          type: 'string',
-          name: 'width',
-          label: 'Width',
-          options: options.sizes,
-        },
-        {
-          type: 'string',
-          name: 'height',
-          label: 'Height',
-          options: options.sizes,
-        },
+        // {
+        //   type: 'string',
+        //   name: 'width',
+        //   label: 'Width',
+        //   options: options.sizes,
+        //   ui: { parse: (val: string) => val.toString() },
+        // },
+        // {
+        //   type: 'string',
+        //   name: 'height',
+        //   label: 'Height',
+        //   options: options.sizes,
+        //   ui: { parse: (val: string) => val.toString() },
+        // },
         {
           type: 'string',
           name: 'position',

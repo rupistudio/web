@@ -12,13 +12,13 @@ export const hero: Template = {
   fields: [
     {
       type: 'string',
-      name: 'heading',
-      label: 'Heading',
+      name: 'intro',
+      label: 'Intro Text',
     },
     {
       type: 'string',
-      name: 'subtitle',
-      label: 'Subtitle',
+      name: 'heading',
+      label: 'Heading',
     },
     ...fields?.image,
     {
