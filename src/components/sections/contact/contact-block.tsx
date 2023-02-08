@@ -13,7 +13,7 @@ import {
 import type { PageSectionsContact } from '.tina';
 import type { FC } from 'react';
 
-import { FullLogo } from '../../full-logo-block';
+import { FullLogo } from '../full-logo-block';
 import { Title } from '../../title';
 import { MapContainer, StoreIcon } from '../_shared.components';
 

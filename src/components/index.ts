@@ -1,4 +1,4 @@
-export * from './full-logo-block';
+export * from './sections/full-logo-block';
 export * from './layouts';
 export * from './policies';
 export * from './sections';

@@ -7,3 +7,4 @@ export * from './contact'
 export * from "./core-services"
 export * from "./cover-image"
 export * from "./divider"
+export * from "./full-logo-block"

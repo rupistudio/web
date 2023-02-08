@@ -11,7 +11,7 @@ import Image from 'next/image';
 import type { Maybe, PageSectionsAbout } from '.tina';
 import type { FC } from 'react';
 
-import { FullLogo } from '../../full-logo-block';
+import { FullLogo } from '../full-logo-block';
 import { TitleBlock } from '../title-block';
 import { Decorators, LicenseInfo, LicensesStack } from './about.components';
 
