@@ -1,23 +1,23 @@
-import { Box,Heading,VStack } from '@chakra-ui/react';
+import { Box, Heading, VStack } from '@chakra-ui/react';
 import Image from 'next/image';
 
 import type { PageSections } from '.tina';
 import type { As } from '@chakra-ui/react';
 import type { FC } from 'react';
 
-type Title = { title: string };
-type HeadingAs = {
-  as?: As<any>;
+type Title = {
+  title?: string | null | undefined;
+  as?: string | null | undefined;
 };
 
 export const TitleBlock: FC<
-  Title & HeadingAs
+  Title
   // | (CategoriesBlocksSectionTitle & HeadingAs)
 > = ({ title, as = 'h1' }) => {
   return (
     <VStack mt={28} mb={9}>
       <Heading
-        as={as}
+        as={as as As<any>}
         color="gray.600"
         textStyle={as as string}
         mb="-1em"

@@ -15,6 +15,7 @@ import {
   HeroBlock,
   LocationCTABlock,
   PageLayout,
+  TitleBlock,
 } from '@/components';
 import { ContactBlock } from '@/components/sections/contact';
 import { getBaseUrl } from '@/utils';
@@ -54,9 +55,10 @@ export const PageBlocks: React.FC<Page> = ({ sections }) => {
               );
             case 'PageSectionsContact':
               return <ContactBlock {...section} key={section.__typename} />;
+            case 'PageSectionsTitle':
+              return <TitleBlock {...section} key={section.__typename} />;
           }
         })}
-      <code>{JSON.stringify(sections, null, 2)}</code>
     </>
   );
 };
