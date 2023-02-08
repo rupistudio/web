@@ -113,6 +113,7 @@ export const fields: Record<string, Template['fields']> = {
           name: 'attr',
           label: 'Attribution',
         },
+        // // @TODO: must find a way to optionally allow sizes
         // {
         //   type: 'string',
         //   name: 'width',
@@ -290,6 +291,50 @@ export const fields: Record<string, Template['fields']> = {
           label: 'Shadow',
           name: 'shadow',
           options: options.decorative.shadow,
+        },
+      ],
+    },
+  ],
+  relations: [
+    {
+      type: 'object',
+      name: 'services',
+      label: 'Services',
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          id: item.service,
+          key: item.service,
+          label: item.service,
+        }),
+      },
+      fields: [
+        {
+          type: 'reference',
+          name: 'service',
+          label: 'Service',
+          collections: ['service'],
+        },
+      ],
+    },
+    {
+      type: 'object',
+      name: 'types',
+      label: 'Service Types',
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          id: item.type,
+          key: item.type,
+          label: item.type,
+        }),
+      },
+      fields: [
+        {
+          type: 'reference',
+          name: 'type',
+          label: 'Types',
+          collections: ['type'],
         },
       ],
     },
