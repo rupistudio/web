@@ -5,3 +5,5 @@ export * from './hero';
 export * from './title-block'
 export * from './contact'
 export * from "./core-services"
+export * from "./cover-image"
+export * from "./divider"
