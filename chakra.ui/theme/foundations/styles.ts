@@ -1,6 +1,6 @@
 import type { ChakraTheme } from '@chakra-ui/react';
-import { mode, type StyleFunctionProps } from '@chakra-ui/theme-tools';
-import { darken, lighten } from 'color2k';
+import { mode,type StyleFunctionProps } from '@chakra-ui/theme-tools';
+import { darken,lighten } from 'color2k';
 
 export const styles: ChakraTheme['styles'] = {
   global: (props: StyleFunctionProps) => ({
@@ -12,6 +12,7 @@ export const styles: ChakraTheme['styles'] = {
       textRendering: 'optimizeLegibility',
       WebkitFontSmoothing: 'antialiased',
       WebkitTapHighlightColor: 'rgba(0, 0, 0, 0)',
+      whiteSpace: 'normal', // @FIXME: this maybe a hack: text was not wrapping inside divs
     },
     '*, *::before, *::after': {
       borderColor: 'rootBorder',

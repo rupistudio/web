@@ -27,7 +27,7 @@ export const ColumnLeft: FC<{ intro: string; heading: string }> = ({
           {intro}
         </chakra.p>
       ) : null}
-      <Box position="relative" whiteSpace="pre-wrap">
+      <Box position="relative">
         {heading ? (
           <chakra.h1
             color="primary"
@@ -37,7 +37,6 @@ export const ColumnLeft: FC<{ intro: string; heading: string }> = ({
             textShadow="0px 1px 1px #555"
             textAlign={['center', null, null, 'left']}
             textTransform="capitalize"
-            // data-tinafield="heading"
           >
             {heading}
           </chakra.h1>

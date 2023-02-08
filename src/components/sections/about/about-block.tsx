@@ -1,4 +1,11 @@
-import { Box, chakra, Container, Divider, Stack } from '@chakra-ui/react';
+import {
+  AspectRatio,
+  Box,
+  chakra,
+  Container,
+  Divider,
+  Stack,
+} from '@chakra-ui/react';
 import Image from 'next/image';
 
 import type { Maybe, PageSectionsAbout } from '.tina';
@@ -19,21 +26,13 @@ type AboutBlockProps = {
     alt?: string;
     attr?: string;
     caption?: string;
-    width?: string;
-    height?: string;
+    // width?: string;
+    // height?: string;
   };
   showLicenses?: boolean;
 };
 
-export const AboutBlock: FC<PageSectionsAbout | AboutBlockProps> = ({
-  title = 'About Us',
-  heading,
-  subtitle,
-  caption,
-  description,
-  image,
-  showLicenses,
-}) => {
+export const AboutBlock: FC<PageSectionsAbout | AboutBlockProps> = (props) => {
   return (
     <Box w="full" bg="pink.50" py={24}>
       <Box my={20}>
@@ -56,7 +55,7 @@ export const AboutBlock: FC<PageSectionsAbout | AboutBlockProps> = ({
         <Decorators />
         <FullLogo />
         <Divider borderColor="gray.200" />
-        {title ? (
+        {props?.title ? (
           <chakra.h2
             fontSize={{ base: '4xl', xl: '6xl' }}
             color="secondary"
@@ -68,7 +67,7 @@ export const AboutBlock: FC<PageSectionsAbout | AboutBlockProps> = ({
             textAlign="center"
             data-tinafield="title"
           >
-            {title}
+            {props?.title}
           </chakra.h2>
         ) : null}
         <Stack
@@ -77,41 +76,45 @@ export const AboutBlock: FC<PageSectionsAbout | AboutBlockProps> = ({
           alignItems="center"
           mb={{ base: 3, md: 12 }}
         >
-          {image ? (
+          {props.image ? (
             <Image
-              src={String(image.src)}
-              alt={String(image.alt)}
+              src={String(props.image.src)}
+              alt={String(props.image.alt)}
               width={984 / 2}
               height={1205 / 2}
+              // fill={true}
               style={{ borderRadius: '15px' }}
             />
           ) : null}
           <Box w="full" h="full">
-            {heading && subtitle && caption ? (
+            {/* {props.heading && props.subtitle ? ( */}
+            {props.showLicenses ? (
               <LicenseInfo
-                heading={String(heading)}
-                subheading={String(subtitle)}
-                caption={String(caption)}
+                heading={String(props.heading)}
+                subheading={String(props.subtitle)}
+                caption={String(props.caption)}
               />
             ) : null}
-            {description ? (
+            {props.description ? (
               <Box
+                position="relative"
                 color="gray.600"
                 textAlign={{ base: 'justify' }}
                 p={{ base: 2, md: 6 }}
+                maxW="lg"
               >
                 <chakra.p
                   fontSize={{ base: 'lg', lg: 'xl' }}
                   mb={9}
-                  data-tinafield="description"
+                  // data-tinafield="description"
                 >
-                  {description}
+                  {props.description}
                 </chakra.p>
               </Box>
             ) : null}
           </Box>
         </Stack>
-        {showLicenses ? (
+        {props.showLicenses ? (
           <Box
             position="relative"
             textAlign="center"
