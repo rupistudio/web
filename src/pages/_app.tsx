@@ -32,6 +32,7 @@ export default function App<AppType>({
       <SkipNavLink mt={56} ml={4}>
         Skip to content
       </SkipNavLink>
+      {/* @FIXME: remove when live */}
       {false && appendScriptOnPage(['']) ? (
         <Script src={process.env.NEXT_PUBLIC_TRUSTMARY} async />
       ) : null}
