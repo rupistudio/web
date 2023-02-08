@@ -22,7 +22,7 @@ export const contact: Template = {
     },
     {
       type: 'string',
-      label: 'Phone Number',
+      label: 'Phone Number: Format "(000) 000-0000"',
       name: 'phoneNumber',
     },
   ],

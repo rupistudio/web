@@ -1,19 +1,19 @@
 import {
-AspectRatio,
-Box,
-chakra,
-Container,
-Divider,
-Stack
+  AspectRatio,
+  Box,
+  chakra,
+  Container,
+  Divider,
+  Stack,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 
-import type { Maybe,PageSectionsAbout } from '.tina';
+import type { Maybe, PageSectionsAbout } from '.tina';
 import type { FC } from 'react';
 
 import { FullLogo } from '../../full-logo-block';
 import { TitleBlock } from '../title-block';
-import { Decorators,LicenseInfo,LicensesStack } from './about.components';
+import { Decorators, LicenseInfo, LicensesStack } from './about.components';
 
 type AboutBlockProps = {
   title?: string;
@@ -36,10 +36,8 @@ export const AboutBlock: FC<PageSectionsAbout | AboutBlockProps> = (props) => {
   return (
     <Box
       w="full"
-      // bg="pink.100"
       py={24}
       backgroundImage="linear-gradient(180deg, #FFF1E4 0%, #FED7E2 80%, #FFF1E4 100%)" // bg > pink.100
-      // sx={{ backgroundImage: 'linearGradient(##FFF1E4, #FED7E2)' }}
     >
       <Box my={20}>
         <TitleBlock title="About Us" />

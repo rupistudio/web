@@ -114,7 +114,7 @@ export const ContactBlock: FC<PageSectionsContact> = ({
             </HStack>
           </VStack>
           <Box alignSelf={'center'}>
-            <MapContainer />
+            <MapContainer address={`${address} ${locality}`} />
           </Box>
         </Stack>
       </Container>
