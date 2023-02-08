@@ -1,6 +1,6 @@
 import { defineSchema } from 'tinacms';
 
-import { page } from './collections';
+import { page, service } from './collections';
 import { routers } from './routers';
 
 export const schema = defineSchema({
@@ -34,6 +34,14 @@ export const schema = defineSchema({
       format: 'mdx',
       ui: { router: routers.page },
       fields: page, // Zw7l2
+    },
+    {
+      name: 'service',
+      label: 'Services',
+      path: '_content/services',
+      format: 'mdx',
+      // ui: { router: routers.service },
+      fields: service, // Zw7l2
     },
   ],
 });

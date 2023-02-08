@@ -6,4 +6,7 @@ export const routers = {
     }
     return `/${document._sys.filename}`;
   },
+  service: ({ document }) => {
+    return `/services/${document._sys.filename}`;
+  },
 };
