@@ -1,4 +1,4 @@
-import { DASHES_REGEX,isClient,UNDERSCORES_REGEX } from './constants';
+import { DASHES_REGEX, isClient, UNDERSCORES_REGEX } from './constants';
 
 export const getBaseUrl = () => {
   if (typeof window !== 'undefined') return ''; // browser should use relative url
@@ -142,6 +142,25 @@ export const filename = (str: string) => str.replace(/^.*[\\\/]/, '');
  * @param {string} str
  */
 export const fileExtension = (str: string) => str.split('.').pop();
+
+/* -------------------------------------------------------------------------- */
+/*                                Image Helpers                               */
+/* -------------------------------------------------------------------------- */
+
+export async function getImageDetails(
+  imageUrl: string
+): Promise<{ width: number; height: number; type: string | null }> {
+  try {
+    const response = await fetch(imageUrl);
+    const blob = await response.blob();
+    const image = await createImageBitmap(blob);
+    const type = response.headers.get('content-type');
+    return { width: image.width, height: image.height, type };
+  } catch (error) {
+    console.error(`An error occurred while getting the image size: ${error}`);
+    throw error;
+  }
+}
 
 /* -------------------------------------------------------------------------- */
 /*                               RANDOM HELPERS                               */

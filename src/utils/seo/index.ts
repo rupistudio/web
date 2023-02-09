@@ -1,4 +1,5 @@
 import config from '__data/config.json';
+// import { getImageDetails } from '../fns';
 
 export function SEOConfig(
   title: string,
@@ -10,6 +11,8 @@ export function SEOConfig(
   const subtitleString = hasSubtitle
     ? `| ${subtitle || (config?.subtitle ?? '')}`
     : '';
+
+  // @TODO: implement getImageDetails to gray width, height and type from images dynamically
 
   return {
     title: `${titleString} ${subtitleString}`,
