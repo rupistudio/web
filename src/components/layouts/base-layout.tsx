@@ -23,7 +23,7 @@ export const BaseLayout: FC<BaseLayoutProps> = ({
 }) => {
   return (
     <>
-      <NextSeo {...SEOConfig(title, subtitle, description)} />
+      <NextSeo {...SEOConfig(title, description)} />
       <Main>{children}</Main>
     </>
   );
