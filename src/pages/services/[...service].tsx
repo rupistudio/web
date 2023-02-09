@@ -11,15 +11,12 @@ import type {
 
 import client from '.tina/__generated__/client';
 import {
-  AboutBlock,
-  ContactBlock,
   CoverImageBlock,
   DividerBlock,
-  HeroBlock,
-  LocationCTABlock,
+  FullLogoBlock,
   PageLayout,
+  SimpleContent,
   TitleBlock,
-  FullLogoBlock
 } from '@/components';
 import { getBaseUrl } from '@/utils';
 
@@ -54,6 +51,8 @@ export const ServiceBlocks: React.FC<Service> = ({ sections }) => {
               return <DividerBlock {...section} key={section.__typename} />;
             case 'ServiceSectionsLogo':
               return <FullLogoBlock {...section} key={section.__typename} />;
+            case 'ServiceSectionsContent':
+              return <SimpleContent {...section} key={section.__typename} />;
           }
         })}
     </>

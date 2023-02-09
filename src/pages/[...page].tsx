@@ -11,17 +11,18 @@ import type {
 import client from '.tina/__generated__/client';
 import {
   AboutBlock,
+  ContactBlock,
   CoreServicesBlock,
   CoverImageBlock,
+  DividerBlock,
   FullLogoBlock,
   HeroBlock,
   LocationCTABlock,
   PageLayout,
+  SimpleContent,
   TitleBlock,
 } from '@/components';
-import { ContactBlock } from '@/components/sections/contact';
 import { getBaseUrl } from '@/utils';
-import { DividerBlock } from '../components/sections/divider';
 
 type PageProps = InferGetStaticPropsType<typeof getStaticProps>['props'];
 
@@ -66,6 +67,8 @@ export const PageBlocks: React.FC<Page> = ({ sections }) => {
               return <DividerBlock {...section} key={section.__typename} />;
             case 'PageSectionsLogo':
               return <FullLogoBlock {...section} key={section.__typename} />;
+            case 'PageSectionsContent':
+              return <SimpleContent {...section} key={section.__typename} />;
           }
         })}
     </>

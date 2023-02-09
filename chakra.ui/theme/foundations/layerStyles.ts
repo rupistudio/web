@@ -1,5 +1,17 @@
 import type { ChakraTheme } from '@chakra-ui/react';
 
+const contentDefaults = {
+  w: '95%',
+  maxW: ['container.sm', 'container.md', 'container.lg', 'container.xl'],
+  px: [4, 8, 12, 16, 24],
+  py: [4, 8, 12, 16],
+  mx: 'auto',
+  my: 6,
+  display: 'flex',
+  flexDirection: 'column',
+  textAlign: 'center',
+};
+
 // U96mLYCh @NOTE: Tina Settings Definitions
 export const customLayerStyles = {
   flex: {
@@ -109,6 +121,32 @@ export const customLayerStyles = {
       pb: 4,
       h: 'auto',
       gap: 3,
+    },
+  },
+  content: {
+    basic: {
+      ...contentDefaults,
+      textAlign: 'center',
+      gap: 3,
+      rounded: 'xl',
+      border: '2px',
+      borderColor: 'gray.400',
+    },
+    benefits: {
+      ...contentDefaults,
+      textAlign: 'center',
+      gap: 3,
+      rounded: 'xl',
+      bg: 'yellow.50',
+    },
+    disclaimer: {
+      ...contentDefaults,
+      textAlign: 'center',
+      gap: 3,
+      rounded: 'xl',
+      bg: 'pink.100',
+      border: '2px dotted',
+      borderColor: 'pink.300',
     },
   },
 };

@@ -113,7 +113,7 @@ const Main: React.FC<MainProps> = ({
         w="full"
         pt={displayHeader ? 6 : 0}
         mt={displayHeader ? 36 : 0}
-        pb={displayHeader ? '1em' : 0}
+        pb={displayHeader ? '7em' : 0}
         minH="100vh"
         // mb={!showReviews ? 20 : 0}
       >
