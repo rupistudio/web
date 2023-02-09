@@ -6,9 +6,7 @@ import { fields, templates } from '../utils';
 export const service: Collection['fields'] = [
   ...fields.service,
   ...fields.image,
-  ...fields.relations,
   ...fields.colors,
-  // ...fields.seo,
   {
     type: 'object',
     name: 'sections',

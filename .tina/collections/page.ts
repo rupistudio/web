@@ -7,7 +7,6 @@ export const page: Collection['fields'] = [
   ...fields.page,
   ...fields.image,
   ...fields.colors,
-  // ...fields.seo,
   {
     type: 'object',
     name: 'sections',

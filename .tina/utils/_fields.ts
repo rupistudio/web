@@ -1,5 +1,5 @@
-import type { Collection,Template } from 'tinacms';
-import { mapOptions,options } from './options';
+import type { Collection, Template } from 'tinacms';
+import { mapOptions, options } from './options';
 
 // Zw7l2
 export const fields: Record<string, Template['fields']> = {
@@ -39,7 +39,8 @@ export const fields: Record<string, Template['fields']> = {
     {
       type: 'string',
       name: 'slug',
-      label: 'Service Slug (must be all lowercase, with no spaces)',
+      label:
+        'Service Slug (must be all lowercase, with no spaces, shown in browser URL)',
       required: true,
     },
   ],
@@ -113,27 +114,54 @@ export const fields: Record<string, Template['fields']> = {
           name: 'attr',
           label: 'Attribution',
         },
-        // // @TODO: must find a way to optionally allow sizes
-        // {
-        //   type: 'string',
-        //   name: 'width',
-        //   label: 'Width',
-        //   options: options.sizes,
-        //   ui: { parse: (val: string) => val.toString() },
-        // },
-        // {
-        //   type: 'string',
-        //   name: 'height',
-        //   label: 'Height',
-        //   options: options.sizes,
-        //   ui: { parse: (val: string) => val.toString() },
-        // },
         // {
         //   type: 'string',
         //   name: 'position',
         //   label: 'Position',
         //   options: options.position,
         // },
+      ],
+    },
+  ],
+  imageWithPosition: [
+    {
+      type: 'object',
+      name: 'image',
+      label: 'Update Image',
+      ui: {
+        defaultItem: {
+          src: '/uploads/assets/placeholder-sq.webp',
+          alt: 'Placeholder Image',
+          position: 'center center',
+        },
+      },
+      fields: [
+        {
+          type: 'image',
+          name: 'src',
+          label: 'Image',
+        },
+        {
+          type: 'string',
+          name: 'alt',
+          label: 'Alt Text (Used by Screen Readers)',
+        },
+        {
+          type: 'string',
+          name: 'caption',
+          label: 'Caption (Text that appears below the image)',
+        },
+        {
+          type: 'string',
+          name: 'attr',
+          label: 'Attribution',
+        },
+        {
+          type: 'string',
+          name: 'position',
+          label: 'Position',
+          options: options.position,
+        },
       ],
     },
   ],

@@ -6,7 +6,11 @@ export const coverImage: Template = {
   label: 'Cover Image',
   name: 'cover',
   ui: {
+    defaultItem: {
+      src: '/uploads/assets/placeholder-sq.webp',
+      alt: 'Placeholder Image',
+    },
     previewSrc: '/blocks/preview-section-cover.webp',
   },
-  fields: fields.image,
+  fields: fields.imageWithPosition,
 };
