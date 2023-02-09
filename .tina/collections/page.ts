@@ -5,8 +5,8 @@ import { fields, templates } from '../utils';
 // Zw7l2
 export const page: Collection['fields'] = [
   ...fields.page,
-  ...fields.colors,
   ...fields.image,
+  ...fields.colors,
   // ...fields.seo,
   {
     type: 'object',
