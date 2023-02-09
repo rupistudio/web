@@ -80,7 +80,6 @@ export const ServiceMenu: React.FC<
               justifyContent="center"
             >
               {props?.types?.map((type) => {
-                console.log('🚀 | file: service-menu.tsx:83 | type', type);
                 if (type?.__typename == 'ServiceSectionsServiceMenuTypes') {
                   if (type.type?.advanced_pricing) {
                     return <OptionCard key={type?.type?.id} {...type} />;
