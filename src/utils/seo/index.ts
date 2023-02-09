@@ -1,34 +1,37 @@
 import config from '__data/seo/config.json';
-// import { getImageDetails } from '../fns';
+
+type seoImage = {
+  url: string;
+  width: number;
+  height: number;
+  alt: string;
+  type: string;
+};
 
 export function SEOConfig(
   title: string,
-  // subtitle?: string,
-  description?: string
+  description?: string,
+  image?: seoImage
 ) {
-  const titleString = `${title || (config?.projectName ?? '')}`;
-  // const hasSubtitle = !!subtitle || !!config?.subtitle;
-  // const subtitleString = hasSubtitle
-  //   ? `| ${subtitle || (config?.subtitle ?? '')}`
-  //   : '';
-
-  // @TODO: implement getImageDetails to gray width, height and type from images dynamically
+  let images = config?.images;
+  if (images[0]?.url && image?.url && image?.url !== images[0]?.url) {
+    images = [image].concat(images);
+  }
 
   return {
-    title: titleString,
+    title: `${title || (config?.title ?? '')}`,
     description: description || config?.description,
-    keywords:
-      'beauty, eye-brows, brows, eye brows, facial, facials, ny, nj, clifton, hudson valley',
+    keywords: config?.keywords,
     twitter: {
       cardType: 'summary_large_image',
       handle: config.twitterHandle,
     },
     openGraph: {
       url: config?.url,
-      title: `${title || config?.projectName} | DJ Chad`,
+      title: `${title || config?.title}`,
       description: description || config?.description,
       locale: config?.locale,
-      images: config?.images,
+      images: images,
     },
     additionalLinkTags: config.additionalLinkTags,
   };

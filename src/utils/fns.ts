@@ -146,20 +146,27 @@ export const fileExtension = (str: string) => str.split('.').pop();
 /* -------------------------------------------------------------------------- */
 /*                                Image Helpers                               */
 /* -------------------------------------------------------------------------- */
-
-export async function getImageDetails(
-  imageUrl: string
-): Promise<{ width: number; height: number; type: string | null }> {
-  try {
-    const response = await fetch(imageUrl);
-    const blob = await response.blob();
-    const image = await createImageBitmap(blob);
-    const type = response.headers.get('content-type');
-    return { width: image.width, height: image.height, type };
-  } catch (error) {
-    console.error(`An error occurred while getting the image size: ${error}`);
-    throw error;
-  }
+/**
+ *
+ *
+ * @export
+ * @param {string} url
+ * @param {string} [prefix]
+ * @return {*}  {Promise<{ width: number; height: number }>}
+ */
+export function getImageDetails(
+  // @NOTE: used by 'src/utils/seo/index.ts'
+  url: string,
+  prefix?: string
+): Promise<{ width: number; height: number }> {
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = function () {
+      resolve({ width: img.width, height: img.height });
+    };
+    img.onerror = reject;
+    img.src = prefix ? `${prefix}${url}` : url;
+  });
 }
 
 /* -------------------------------------------------------------------------- */
