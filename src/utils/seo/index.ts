@@ -1,21 +1,21 @@
-import config from '__data/config.json';
+import config from '__data/seo/config.json';
 // import { getImageDetails } from '../fns';
 
 export function SEOConfig(
   title: string,
-  subtitle?: string,
+  // subtitle?: string,
   description?: string
 ) {
   const titleString = `${title || (config?.projectName ?? '')}`;
-  const hasSubtitle = !!subtitle || !!config?.subtitle;
-  const subtitleString = hasSubtitle
-    ? `| ${subtitle || (config?.subtitle ?? '')}`
-    : '';
+  // const hasSubtitle = !!subtitle || !!config?.subtitle;
+  // const subtitleString = hasSubtitle
+  //   ? `| ${subtitle || (config?.subtitle ?? '')}`
+  //   : '';
 
   // @TODO: implement getImageDetails to gray width, height and type from images dynamically
 
   return {
-    title: `${titleString} ${subtitleString}`,
+    title: titleString,
     description: description || config?.description,
     keywords:
       'beauty, eye-brows, brows, eye brows, facial, facials, ny, nj, clifton, hudson valley',
