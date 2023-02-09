@@ -16,7 +16,7 @@ import type {
   ServiceSectionsServiceMenu,
 } from '.tina';
 
-import { unplauralize } from '../../../utils/fns';
+import { unplauralize } from '@/utils/fns';
 import { Title } from '../../title';
 import { ServiceCard, SimpleOptionCard } from './service-menu.components';
 
@@ -77,13 +77,16 @@ export const ServiceMenu: React.FC<
             >
               {props?.types?.map((type) => {
                 if (
-                  // type?.__typename == 'CategoriesBlocksServiceMenuOptions'
                   type?.__typename == 'ServiceSectionsServiceMenuTypes'
                 ) {
-                  return (
-                    <SimpleOptionCard key={type?.type?.id} {...type} />
-                  );
+                  return <SimpleOptionCard key={type?.type?.id} {...type} />;
                 }
+                // @FIXME: is this needed?
+                // if (
+                //   type?.__typename == 'PageSectionsServiceMenuTypes'
+                // ) {
+                //   return <SimpleOptionCard key={type?.type?.id} {...type} />;
+                // }
               })}
             </SimpleGrid>
           ) : null}

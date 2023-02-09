@@ -1,10 +1,12 @@
-import { Badge, Stack } from '@chakra-ui/react';
+import { Badge,Stack } from '@chakra-ui/react';
 
-// import type { CategoriesBlocksServiceMenu } from '.tina';
+import type {
+  PageSectionsServiceMenu,
+  ServiceSectionsServiceMenu,
+} from '.tina';
 
 export const ServiceBadges: React.FC<{
-  // data: CategoriesBlocksServiceMenu | null | undefined;
-  data: any
+  data:( PageSectionsServiceMenu | ServiceSectionsServiceMenu) | null | undefined;
   hasOptions: boolean;
   hasServices: boolean;
 }> = ({ data, hasOptions, hasServices }) => {
@@ -28,21 +30,21 @@ export const ServiceBadges: React.FC<{
       maxW="240px"
     >
       {hasOptions
-        ? data?.options?.slice(0, 2).map((option) => {
+        ? data?.types?.slice(0, 2).map((type) => {
             return (
               <Badge
-                key={option?.option?.id}
+                key={type?.type?.id}
                 {...badgeStyles}
                 colorScheme="teal"
                 whiteSpace={['nowrap']}
               >
-                {option?.option?.title}
+                {type?.type?.title}
               </Badge>
             );
           })
         : null}
       {!hasOptions && hasServices
-        ? data?.relatedServices?.slice(0, 2).map((service) => {
+        ? data?.services?.slice(0, 2).map((service) => {
             return (
               <Badge
                 key={service?.service?.id}

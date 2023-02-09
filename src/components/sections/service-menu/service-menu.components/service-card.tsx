@@ -1,35 +1,44 @@
 import {
-AspectRatio,
-Button,
-ButtonGroup,
-Flex,
-Stack,
-Text
+  AspectRatio,
+  Button,
+  ButtonGroup,
+  Flex,
+  Stack,
+  Text,
 } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
 import type {
-ServiceSectionsServiceMenu,
-ServiceSectionsServiceMenuServices
+  PageSectionsServiceMenu,
+  PageSectionsServiceMenuServices,
+  ServiceSectionsServiceMenu,
+  ServiceSectionsServiceMenuServices,
 } from '.tina';
 
 import { truncate } from '@/utils';
 import { ServiceBadges } from './service-badges';
 
 export const ServiceCard: React.FC<
-  // CategoriesBlocksServiceMenuRelatedServices & { category?: string }
-  any
+  (PageSectionsServiceMenuServices | ServiceSectionsServiceMenuServices) & {
+    category?: string;
+  }
 > = (props) => {
-  const serviceOptions: ServiceSectionsServiceMenu | null | undefined =
-    props?.service?.sections
-      ?.map((section: any) => { // @FIXME: fix this type
-        if (section?.__typename == 'ServiceSectionServiceMenu') {
-          return section;
-        }
-        return null;
-      })
-      .filter(Boolean)[0];
+  const serviceOptions:
+    | (ServiceSectionsServiceMenu | PageSectionsServiceMenu)
+    | null
+    | undefined = props?.service?.sections
+    ?.map((section: any) => {
+      // @FIXME: fix this type
+      if (section?.__typename == 'ServiceSectionServiceMenu') {
+        return section;
+      }
+      if (section?.__typename == 'PageSectionServiceMenu') {
+        return section;
+      }
+      return null;
+    })
+    .filter(Boolean)[0];
 
   const hasOptions = !!serviceOptions?.types?.length;
   const hasServices = !!serviceOptions?.services?.length;
@@ -46,13 +55,7 @@ export const ServiceCard: React.FC<
               fill={true}
               src={String(props?.service?.image?.src)}
               alt={String(props?.service?.image?.alt)}
-              style={{
-                objectFit: 'cover',
-                objectPosition: String(
-                  props?.service?.image?.pos?.objectPosition
-                ),
-                transform: String(props?.service?.image?.pos?.transform),
-              }}
+              style={{ objectFit: 'cover' }}
             />
           </AspectRatio>
         ) : null}
