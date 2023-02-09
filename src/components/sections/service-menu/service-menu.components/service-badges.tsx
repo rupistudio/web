@@ -31,10 +31,10 @@ export const ServiceBadges: React.FC<{
       maxW="240px"
     >
       {hasOptions
-        ? data?.service?.types?.slice(0, 2).map((type) => {
+        ? data?.service?.types?.slice(0, 2).map((type, i) => {
             return (
               <Badge
-                key={type?.type?.id}
+                key={`${type?.type?.id}-${i}`}
                 {...badgeStyles}
                 colorScheme="teal"
                 whiteSpace={['nowrap']}
@@ -45,10 +45,10 @@ export const ServiceBadges: React.FC<{
           })
         : null}
       {!hasOptions && hasServices
-        ? data?.service?.services?.slice(0, 2).map((service) => {
+        ? data?.service?.services?.slice(0, 2).map((service, i) => {
             return (
               <Badge
-                key={service?.service?.id}
+                key={`${service?.service?.id}-${i}`}
                 {...badgeStyles}
                 whiteSpace={['nowrap']}
               >

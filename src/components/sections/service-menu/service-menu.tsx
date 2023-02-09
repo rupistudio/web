@@ -76,9 +76,7 @@ export const ServiceMenu: React.FC<
               justifyContent="center"
             >
               {props?.types?.map((type) => {
-                if (
-                  type?.__typename == 'ServiceSectionsServiceMenuTypes'
-                ) {
+                if (type?.__typename == 'ServiceSectionsServiceMenuTypes') {
                   return <SimpleOptionCard key={type?.type?.id} {...type} />;
                 }
                 // @FIXME: is this needed?
@@ -120,7 +118,7 @@ export const ServiceMenu: React.FC<
                   props?.services.map((service) => {
                     return (
                       <ServiceCard
-                        key={service?.service?.title}
+                        key={service?.service?.id}
                         service={service?.service}
                         category={props?.category}
                       />
