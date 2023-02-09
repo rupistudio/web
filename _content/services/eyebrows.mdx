@@ -8,26 +8,33 @@ slug: eyebrows
 image:
   src: /uploads/services/lash-lift-result.webp
   alt: Eyebrow Services | Rupi Beauty Studio
-seo:
-  title: Eyebrow Services | Rupi Beauty Studio
-  description: >-
-    Rupi Beauty Studio's Licensed Esteticians offer professional skin-care and
-    beauty treatments at our Pearl Rivier, N.Y. studio. Schedule an appointment
-    to get started today.
-colors:
-  backgroundColor: bg
-  color: text
 layout:
   showHeader: true
   showFooter: true
   showReviews: false
-services:
-  - service: _content/services/eyebrows/tinting.mdx
-types:
-  - type: _content/types/eyebrows/brow-lamination.mdx
-  - type: _content/types/eyebrows/lash-lift.mdx
-  - type: _content/types/eyebrows/lash-lift_brow-lamination.mdx
 sections:
+  - image:
+      src: /uploads/assets/brand/rupi-new-logo-optimized.webp
+      alt: Rupi Beauty Studio Logo | © 2023
+    _template: logo
+  - orientation: horizontal
+    borderColor: primary
+    _template: divider
+  - title: Signature Eyebrow Services
+    as: h3
+    _template: title
+  - image:
+      src: /uploads/services/eyebrow-waxing.webp
+      alt: woman receiving an eyebrow waxing treatment
+      position: center center
+    _template: cover
+  - heading: ''
+    text: >-
+      We take eyebrows seriously. Your eyebrows are the frame of your face. Take
+      advantage of our experience and find the best shape and finish for your
+      eyebrows today.
+    style: basic
+    _template: content
   - services:
       - service: _content/services/eyebrows/tinting.mdx
     types:
@@ -36,7 +43,3 @@ sections:
       - type: _content/types/eyebrows/lash-lift_brow-lamination.mdx
     _template: serviceMenu
 ---
-
-
-
-

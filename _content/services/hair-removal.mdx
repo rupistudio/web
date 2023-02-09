@@ -8,26 +8,30 @@ image:
   src: /uploads/services/laser-hair-removal.webp
   alt: Hair Removal | Rupi Beauty Studio
   attr: Image by senivpetro on Freepik
-seo:
-  title: Hair Removal Services | Rupi Beauty Studio
-  description: >-
-    Rupi Beauty Studio's Licensed Esteticians offer professional skin-care and
-    beauty treatments at our Pearl Rivier, N.Y. studio. Schedule an appointment
-    to get started today.
-colors:
-  backgroundColor: bg
-  color: text
 layout:
   showHeader: true
   showFooter: true
-services:
-  - service: _content/services/hair-removal/body-waxing.mdx
-  - service: _content/services/hair-removal/ipl.mdx
-  - service: _content/services/hair-removal/laser-hair-removal.mdx
-  - service: _content/services/hair-removal/mens-waxing.mdx
-  - service: _content/services/hair-removal/threading.mdx
-  - service: _content/services/hair-removal/waxing.mdx
 sections:
+  - image:
+      src: /uploads/assets/brand/rupi-new-logo-optimized.webp
+      alt: Rupi Beauty Studio Logo | © 2023
+    _template: logo
+  - orientation: horizontal
+    borderColor: primary
+    _template: divider
+  - title: Hair Removal Services
+    as: h3
+    _template: title
+  - image:
+      src: /uploads/services/laser-hair-removal.webp
+      alt: customer receiving a laser hair removal treatment
+      position: center center
+    _template: cover
+  - heading: ''
+    text: >-
+      We offer several hair removal treatment options for fit your needs. Consult with a Rupi professional to find out more.
+    style: basic
+    _template: content
   - services:
       - service: _content/services/hair-removal/body-waxing.mdx
       - service: _content/services/hair-removal/ipl.mdx
@@ -37,5 +41,3 @@ sections:
       - service: _content/services/hair-removal/waxing.mdx
     _template: serviceMenu
 ---
-
-

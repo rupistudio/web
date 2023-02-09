@@ -8,15 +8,30 @@ image:
   src: /uploads/people/woman-wavy-hair.webp
   alt: Addon Services | Rupi Beauty Studio
   attr: Image by valuavitaly on Freepik
-colors:
-  backgroundColor: bg
-  color: text
 layout:
   showHeader: true
   showFooter: true
-services:
-  - service: _content/services/addons/lipo.mdx
 sections:
+  - image:
+      src: /uploads/assets/brand/rupi-new-logo-optimized.webp
+      alt: Rupi Beauty Studio Logo | © 2023
+    _template: logo
+  - orientation: horizontal
+    borderColor: primary
+    _template: divider
+  - title: Signature Addons &  Packages
+    as: h3
+    _template: title
+  - image:
+      src: /uploads/people/leaf-eye.webp
+      alt: woman with beautiful eyelashes peeking through foliage
+      position: center center
+    _template: cover
+  - text: >-
+      We provide several packages and addons to help you get the most out of
+      your beauty experience.
+    style: basic
+    _template: content
   - services:
       - service: _content/services/addons/lipo.mdx
     types:

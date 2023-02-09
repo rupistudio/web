@@ -9,26 +9,32 @@ image:
   alt: >-
     Rupi Beauty Studio Skin-Care, facials, chemical peels, acne treatments, and
     anti-aging
-seo:
-  title: Skin Care Services | Rupi Beauty Studio
-  description: >-
-    Rupi Beauty Studio's Licensed Esteticians offer professional skin-care and
-    beauty treatments at our Pearl Rivier, N.Y. studio. Schedule an appointment
-    to get started today.
-colors:
-  backgroundColor: bg
-  color: text
 layout:
   showHeader: true
   showFooter: true
-services:
-  - service: _content/services/skin-care/chemical-peels.mdx
-  - service: _content/services/skin-care/facials.mdx
 sections:
+  - image:
+      src: /uploads/assets/brand/rupi-new-logo-optimized.webp
+      alt: Rupi Beauty Studio Logo | © 2023
+    _template: logo
+  - orientation: horizontal
+    borderColor: primary
+    _template: divider
+  - title: Beauty & Skin-Care Services
+    as: h3
+    _template: title
+  - image:
+      src: /uploads/people/woman-tenderly-touching-skin.webp
+      alt: beautiful woman with gorgeous skin
+    _template: cover
+  - heading: ''
+    text: >-
+      We've got your back, your front, and everything in between! Our skin care
+      treatments will help you looking better than you ever have.
+    style: basic
+    _template: content
   - services:
       - service: _content/services/skin-care/chemical-peels.mdx
       - service: _content/services/skin-care/facials.mdx
     _template: serviceMenu
 ---
-
-

@@ -13,28 +13,36 @@ slug: tinting
 image:
   src: /uploads/services/brow-tinting.webp
   alt: Eyebrow Tinting Services | Rupi Beauty Studio
-seo:
-  title: Rupi Beauty Studio
-  description: >-
-    Rupi Beauty Studio's Licensed Esteticians offer professional skin-care and
-    beauty treatments at our Pearl Rivier, N.Y. studio. Schedule an appointment
-    to get started today.
-colors:
-  backgroundColor: bg
-  color: text
 layout:
   showHeader: true
   showFooter: true
-types:
-  - type: _content/types/eyebrows/tinting/brow-tint.mdx
-  - type: _content/types/eyebrows/tinting/brows_tint.mdx
-  - type: _content/types/eyebrows/tinting/lash-tint.mdx
 sections:
+  - image:
+      src: /uploads/assets/brand/rupi-new-logo-optimized.webp
+      alt: Rupi Beauty Studio Logo | © 2023
+    _template: logo
+  - orientation: horizontal
+    borderColor: primary
+    _template: divider
+  - title: Eyebrow Tinting Services
+    as: h3
+    _template: title
+  - image:
+      src: /uploads/services/brow-tinting.webp
+      alt: customer receiving a chest waxing treatment
+      position: bottom center
+    _template: cover
+  - heading: ''
+    text: >-
+      Brow tinting is a cosmetic procedure in which a dye is applied to the eyebrows
+      to enhance their color and shape. A trained esthetician will then use a small
+      brush to apply the tint to the eyebrows, taking care to avoid any contact with
+      the skin around the brows.
+    style: basic
+    _template: content
   - types:
       - type: _content/types/eyebrows/tinting/brow-tint.mdx
       - type: _content/types/eyebrows/tinting/brows_tint.mdx
       - type: _content/types/eyebrows/tinting/lash-tint.mdx
     _template: serviceMenu
 ---
-
-

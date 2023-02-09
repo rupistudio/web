@@ -21,25 +21,35 @@ image:
   src: /uploads/services/chemical-peels.webp
   alt: Chemical Peel Services | Rupi Beauty Studio
   attr: Image by senivpetro on Freepik
-seo:
-  title: Rupi Beauty Studio
-  description: >-
-    Rupi Beauty Studio's Licensed Esteticians offer professional skin-care and
-    beauty treatments at our Pearl Rivier, N.Y. studio. Schedule an appointment
-    to get started today.
-colors:
-  backgroundColor: bg
-  color: text
 layout:
   showHeader: true
   showFooter: true
-types:
-  - type: _content/types/skin-care/chemical-peels/body.mdx
-  - type: _content/types/skin-care/chemical-peels/glycolic.mdx
-  - type: _content/types/skin-care/chemical-peels/jessner.mdx
-  - type: _content/types/skin-care/chemical-peels/mandelic.mdx
-  - type: _content/types/skin-care/chemical-peels/pyruvic.mdx
 sections:
+  - image:
+      src: /uploads/assets/brand/rupi-new-logo-optimized.webp
+      alt: Rupi Beauty Studio Logo | © 2023
+    _template: logo
+  - orientation: horizontal
+    borderColor: primary
+    _template: divider
+  - title: Rupi Chemical Peel Treatments
+    as: h3
+    _template: title
+  - image:
+      src: /uploads/services/chemical-peels.webp
+      alt: customer receiving chemical peel treatment
+      position: center center
+    _template: cover
+  - heading: ''
+    text: >-
+      A Chemical Peel is a type of cosmetic procedure that uses a chemical
+      solution to remove the damaged outer layers of the skin. It is a type of
+      chemical exfoliating that dissolves the bond between dead skin cells
+      allowing them to easily wipe away to reveal smoother, younger,
+      healthier-looking skin. Our trained esthetician will then cleanse your
+      skin and apply the chemical solution to the skin.
+    style: basic
+    _template: content
   - types:
       - type: _content/types/skin-care/chemical-peels/body.mdx
       - type: _content/types/skin-care/chemical-peels/glycolic.mdx
@@ -48,5 +58,4 @@ sections:
       - type: _content/types/skin-care/chemical-peels/pyruvic.mdx
     _template: serviceMenu
 ---
-
 
