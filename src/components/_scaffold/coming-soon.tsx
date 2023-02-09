@@ -7,25 +7,34 @@ import { ChakraNextImage } from 'chakra.ui';
 
 export const ComingSoon: FC = () => {
   return (
-    <Flex flexDirection="column" justify="center" alignItems="center" h="80vh">
-      <Box position="relative" mt={{ lg: -56 }}>
+    <Flex
+      w="full"
+      flexDirection="column"
+      justify="center"
+      alignItems="center"
+      h="80vh"
+      my="auto"
+      mx="auto"
+    >
+      <Box position="relative" mt="10em" flex={1}>
         <ChakraNextImage
           width="500"
           height="430"
           objectFit="contain"
-          src={`${CDN_URL}${BRAND_DIR}/RUPI-NEW-LOGO-PNG-MD.png`}
+          src={`/uploads/assets/brand/rupi-new-logo-optimized.webp`}
           alt=""
           priority
         />
+        <chakra.p
+          fontSize="4xl"
+          color="secondary"
+          textTransform="uppercase"
+          letterSpacing="widest"
+          textAlign="center"
+        >
+          Coming Soon
+        </chakra.p>
       </Box>
-      <chakra.p
-        fontSize="4xl"
-        color="secondary"
-        textTransform="uppercase"
-        letterSpacing="widest"
-      >
-        Coming Soon
-      </chakra.p>
     </Flex>
   );
 };
