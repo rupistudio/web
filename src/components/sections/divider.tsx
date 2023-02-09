@@ -11,7 +11,10 @@ export const DividerBlock: React.FC<any> = ({
 }) => {
   return (
     <Box w="full" h="full" maxW="85%" maxH="85%" mx="auto" my="auto" py={6}>
-      <Divider orientation={orientation} borderColor={borderColor} />
+      <Divider
+        orientation={orientation}
+        borderColor={borderColor.replace('-', '.')}
+      />
     </Box>
   );
 };

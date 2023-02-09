@@ -1,11 +1,11 @@
-import { AspectRatio,Container } from '@chakra-ui/react';
+import { AspectRatio, Container } from '@chakra-ui/react';
 import Image from 'next/image';
 
-import type { PageSectionsCover,ServiceSectionsCover } from '.tina';
+import type { PageSectionsCover, ServiceSectionsCover } from '.tina';
 
-export const CoverImageBlock: React.FC<PageSectionsCover | ServiceSectionsCover> = (
-  props
-) => {
+export const CoverImageBlock: React.FC<
+  PageSectionsCover | ServiceSectionsCover
+> = (props) => {
   return props?.image ? (
     <Container
       position="relative"
@@ -28,7 +28,10 @@ export const CoverImageBlock: React.FC<PageSectionsCover | ServiceSectionsCover>
           }
           fill={true}
           priority
-          style={{ objectFit: 'cover' }}
+          style={{
+            objectFit: 'cover',
+            objectPosition: props?.image?.position ?? 'top center',
+          }}
         />
       </AspectRatio>
     </Container>

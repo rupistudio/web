@@ -62,7 +62,7 @@ export const ServiceCard: React.FC<
 
         {props.service?.description ? (
           <Text color="gray.700" px={3} data-tinafield="description">
-            {truncate(props?.service?.description, 175)}
+            {truncate(props?.service?.description, 130)}
           </Text>
         ) : null}
 

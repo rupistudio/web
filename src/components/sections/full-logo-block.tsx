@@ -22,7 +22,8 @@ export type FullLogoBlockProps = {
     src?: string | null | undefined;
     alt?: string | null | undefined;
     attr?: string | null | undefined;
-    // caption?: string | null | undefined;
+    caption?: string | null | undefined;
+    position?: string | null | undefined;
   };
 };
 
@@ -34,7 +35,7 @@ export const FullLogoBlock: FC<
       width="300"
       height="258"
       objectFit="contain"
-      src={String(image?.src)}
+      src={image?.src ?? '/uploads/assets/brand/rupi-new-logo-optimized.webp'}
       alt={String(image?.alt)}
       priority
     />
