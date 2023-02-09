@@ -2,7 +2,7 @@ import { Box, chakra, ChakraProps } from '@chakra-ui/react';
 import { SkipNavContent } from '@chakra-ui/skip-nav';
 import { NextSeo } from 'next-seo';
 import Script from 'next/script';
-import { useEffect } from 'react';
+import { useEffect, useRef } from 'react';
 
 import { SocialShare, Title } from '@/components';
 import {
@@ -13,45 +13,54 @@ import {
   transitionDown as variants,
 } from 'chakra.ui';
 
-import { isBrowser, isProd } from '@/utils';
+import { fileExtension, getImageDetails, isBrowser, isProd } from '@/utils';
 import { SEOConfig } from '@/utils/seo';
+
+type TinaSeoImage = {
+  src?: string;
+  alt?: string;
+  attr?: string;
+  caption?: string;
+  width?: string;
+  height?: string;
+};
+
+type seoImage = {
+  url: string;
+  width: number;
+  height: number;
+  alt: string;
+  type: string;
+};
 
 export type LayoutProps = {
   title?: string;
   description?: string;
+  image?: TinaSeoImage;
+  backgroundColor?: ChakraProps['backgroundColor'];
+  color?: ChakraProps['color'];
+
   layout?: {
     showHeader: boolean;
     showFooter: boolean;
     showReviews: boolean;
   };
-  backgroundColor?: ChakraProps['backgroundColor'];
-  color?: ChakraProps['color'];
-  seo?: {
-    title?: string;
-    description?: string;
-    image?: {
-      src?: string;
-      alt?: string;
-      attr?: string;
-      caption?: string;
-      width?: string;
-      height?: string;
-    };
-  };
+
   children?: React.ReactNode;
 };
 
 export const PageLayout: React.FC<LayoutProps> = ({
   title = 'Site Title',
   description = '',
+  image,
   layout,
   color,
   backgroundColor,
-  seo, // @TODO: add image from tina
   children,
 }) => {
+  const imageSpecs = useRef({} as seoImage);
   useEffect(() => {
-    if (!isBrowser) return;
+    if ((!isBrowser && !color) || !backgroundColor) return;
     if (backgroundColor) {
       document.body.style.setProperty(
         `--chakra-colors-chakra-body-bg`,
@@ -84,11 +93,25 @@ export const PageLayout: React.FC<LayoutProps> = ({
     // );
   }, [backgroundColor, color]);
 
+  const prefix = 'https://cdn.jsdelivr.net/gh/rupistudio/web@main/public';
+  useEffect(() => {
+    if (!isBrowser) return;
+    if (image?.src) {
+      getImageDetails(String(image.src), prefix).then((value) => {
+        const specs = value;
+        imageSpecs.current = {
+          url: prefix + image?.src,
+          ...value,
+          alt: String(image?.alt),
+          type: `image/${fileExtension(String(image?.src))}`,
+        };
+      });
+    }
+  }, []);
+
   return (
     <>
-      <NextSeo
-        {...SEOConfig(seo?.title || title, seo?.description || description)}
-      />
+      <NextSeo {...SEOConfig(title, description, imageSpecs.current)} />
       <SocialShare twitter facebook pinterest />
       <Sidebar />
       {layout?.showHeader && <Header />}
@@ -114,7 +137,6 @@ export const PageLayout: React.FC<LayoutProps> = ({
 
 type MainProps = {
   color: ChakraProps['color'];
-  // bg: ChakraProps['backgroundColor'];
   displayHeader: boolean;
   showReviews: boolean;
   children: React.ReactNode;
@@ -122,7 +144,6 @@ type MainProps = {
 
 const Main: React.FC<MainProps> = ({
   color,
-  // bg,
   displayHeader,
   showReviews,
   children,
