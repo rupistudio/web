@@ -107,6 +107,9 @@ export const PageLayout: React.FC<LayoutProps> = ({
         };
       });
     }
+    return () => {
+      imageSpecs.current = {} as seoImage;
+    };
   }, []);
 
   return (

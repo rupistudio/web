@@ -10,14 +10,12 @@ import { SEOConfig } from '@/utils/seo';
 
 export type BaseLayoutProps = {
   title: string;
-  subtitle?: string;
   description?: string;
   children: React.ReactNode;
 };
 
 export const BaseLayout: FC<BaseLayoutProps> = ({
   title = 'Site Title',
-  subtitle = '',
   description = '',
   children,
 }) => {
