@@ -1,7 +1,8 @@
 import { Template } from 'tinacms';
-import { mapOptions, options } from '../../utils';
+import { mapOptions,options } from '../../utils';
 import { fields } from '../../utils/_fields'; // @TODO: extract fields
 
+// ZWgF2
 export const divider: Template = {
   label: 'Divider',
   name: 'divider',

@@ -1,6 +1,7 @@
 import { Template } from 'tinacms';
 import { mapOptions } from '../../utils/options';
 
+// ZWgF2
 export const title: Template = {
   label: 'Section Title',
   name: 'title',
