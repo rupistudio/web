@@ -3,7 +3,6 @@ import { Badge, Stack } from '@chakra-ui/react';
 import type {
   PageSectionsServiceMenu,
   ServiceSectionsServiceMenu,
-  ServiceServices,
 } from '.tina';
 
 export const ServiceBadges: React.FC<{
