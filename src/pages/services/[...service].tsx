@@ -13,9 +13,13 @@ import client from '.tina/__generated__/client';
 import {
   AboutBlock,
   ContactBlock,
+  CoverImageBlock,
+  DividerBlock,
   HeroBlock,
   LocationCTABlock,
   PageLayout,
+  TitleBlock,
+  FullLogoBlock
 } from '@/components';
 import { getBaseUrl } from '@/utils';
 
@@ -42,8 +46,14 @@ export const ServiceBlocks: React.FC<Service> = ({ sections }) => {
       {sections?.length &&
         sections?.map((section) => {
           switch (section?.__typename) {
-            case 'ServiceSectionsContact':
-              return <ContactBlock {...section} key={section.__typename} />;
+            case 'ServiceSectionsTitle':
+              return <TitleBlock {...section} key={section.__typename} />;
+            case 'ServiceSectionsCover':
+              return <CoverImageBlock {...section} key={section.__typename} />;
+            case 'ServiceSectionsDivider':
+              return <DividerBlock {...section} key={section.__typename} />;
+            case 'ServiceSectionsLogo':
+              return <FullLogoBlock {...section} key={section.__typename} />;
           }
         })}
     </>

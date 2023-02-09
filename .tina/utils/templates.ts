@@ -11,5 +11,5 @@ export const templates: Record<string, Template[]> = {
     blocks.locationCta,
     blocks.contact,
   ],
-  service: [blocks.title, blocks.coverImage, blocks.divider],
+  service: [blocks.title, blocks.divider, blocks.logo, blocks.coverImage],
 };

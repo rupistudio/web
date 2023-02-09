@@ -13,6 +13,7 @@ import {
   AboutBlock,
   CoreServicesBlock,
   CoverImageBlock,
+  FullLogoBlock,
   HeroBlock,
   LocationCTABlock,
   PageLayout,
@@ -63,6 +64,8 @@ export const PageBlocks: React.FC<Page> = ({ sections }) => {
               return <CoverImageBlock {...section} key={section.__typename} />;
             case 'PageSectionsDivider':
               return <DividerBlock {...section} key={section.__typename} />;
+            case 'PageSectionsLogo':
+              return <FullLogoBlock {...section} key={section.__typename} />;
           }
         })}
     </>
