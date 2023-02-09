@@ -1,19 +1,15 @@
-import { Box,Heading,VStack } from '@chakra-ui/react';
+import { Box, ChakraProps, Heading, VStack } from '@chakra-ui/react';
 import Image from 'next/image';
 
 import type { As } from '@chakra-ui/react';
 import type { FC } from 'react';
 
-
-type Title = { title: string };
-type HeadingAs = {
-  as?: As<any>;
-};
+type TitleProps = { title: string; as?: As<any> } & Partial<ChakraProps>;
 
 // @NOTE: Used by other blocks to internalize section title
-export const Title: FC<Title & HeadingAs> = ({ title, as = 'h1' }) => {
+export const Title: FC<TitleProps> = ({ title, as = 'h1', ...rest }) => {
   return (
-    <VStack my={12}>
+    <VStack my={12} {...rest}>
       <Heading as={as} color="gray.600" mb="-1em" textStyle={as as string}>
         {title}
       </Heading>

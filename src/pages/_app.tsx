@@ -14,12 +14,12 @@ export default function App<AppType>({
   pageProps,
   router,
 }: AppProps) {
-  function appendScriptOnPage(pagesArray: string[]): boolean {
-    return !!pagesArray.filter((page) => {
-      if (page === '/') return true;
-      return router.asPath.includes(page);
-    }).length;
-  }
+  // function appendScriptOnPage(pagesArray: string[]): boolean {
+  //   return !!pagesArray.filter((page) => {
+  //     if (page === '/') return true;
+  //     return router.asPath.includes(page);
+  //   }).length;
+  // }
 
   return (
     <>
@@ -33,9 +33,9 @@ export default function App<AppType>({
         Skip to content
       </SkipNavLink>
       {/* @FIXME: remove when live */}
-      {false && appendScriptOnPage(['']) ? (
+      {/* {appendScriptOnPage(['/home', '/services']) ? (
         <Script src={process.env.NEXT_PUBLIC_TRUSTMARY} async />
-      ) : null}
+      ) : null} */}
       <ErrorBoundary>
         <ChakraWrapper>
           <Component {...pageProps} />

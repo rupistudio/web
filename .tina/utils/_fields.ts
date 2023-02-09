@@ -259,6 +259,11 @@ export const fields: Record<string, Template['fields']> = {
           name: 'showFooter',
           label: 'Show Footer',
         },
+        {
+          type: 'boolean',
+          name: 'showReviews',
+          label: 'Show Reviews',
+        },
       ],
     },
   ],
