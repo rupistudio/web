@@ -17,6 +17,7 @@ export const templates: Record<string, Template[]> = {
     blocks.logo,
     blocks.coverImage,
     blocks.content,
-    blocks.serviceMenu
+    blocks.serviceMenu,
+    blocks.emailCta,
   ],
 };
