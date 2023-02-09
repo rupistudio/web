@@ -1,5 +1,5 @@
-import type { Template } from 'tinacms';
-import { mapOptions, options } from './options';
+import type { Collection,Template } from 'tinacms';
+import { mapOptions,options } from './options';
 
 // Zw7l2
 export const fields: Record<string, Template['fields']> = {
@@ -340,6 +340,29 @@ export const fields: Record<string, Template['fields']> = {
           name: 'type',
           label: 'Types',
           collections: ['type'],
+        },
+      ],
+    },
+  ],
+  seo: [
+    {
+      type: 'object',
+      name: 'pageSEO',
+      label: 'Page SEO',
+      // fields: [...fields.page, ...fields.image],
+      ui: {
+        itemProps: (item) => ({
+          id: item.title,
+          label: item.title,
+          key: item.title,
+        }),
+      },
+      fields: [
+        {
+          type: 'reference',
+          name: 'seo',
+          label: 'seo',
+          collections: ['seo'],
         },
       ],
     },

@@ -8,12 +8,7 @@ export const service: Collection['fields'] = [
   ...fields.image,
   ...fields.relations,
   ...fields.colors,
-  {
-    type: 'object',
-    name: 'seo',
-    label: 'SEO',
-    fields: [...fields.page, ...fields.image],
-  },
+  // ...fields.seo,
   {
     type: 'object',
     name: 'sections',

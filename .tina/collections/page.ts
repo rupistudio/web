@@ -6,12 +6,8 @@ import { fields, templates } from '../utils';
 export const page: Collection['fields'] = [
   ...fields.page,
   ...fields.colors,
-  {
-    type: 'object',
-    name: 'seo',
-    label: 'SEO',
-    fields: [...fields.page, ...fields.image],
-  },
+  ...fields.image,
+  // ...fields.seo,
   {
     type: 'object',
     name: 'sections',

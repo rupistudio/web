@@ -1,6 +1,6 @@
 import { defineSchema } from 'tinacms';
 
-import { page, service, type } from './collections';
+import { page, seo, service, type } from './collections';
 import { routers } from './routers';
 
 export const schema = defineSchema({
@@ -28,6 +28,14 @@ export const schema = defineSchema({
       format: 'mdx',
       ui: { global: true },
       fields: type, // Zw7l2
+    },
+    {
+      name: 'seo',
+      label: 'SEO',
+      path: '__data/seo',
+      format: 'json',
+      ui: { global: true },
+      fields: seo, // Zw7l2
     },
   ],
 });
