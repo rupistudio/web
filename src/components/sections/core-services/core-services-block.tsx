@@ -1,11 +1,7 @@
 import { AspectRatio, Box, Container, SimpleGrid } from '@chakra-ui/react';
 import { useRouter } from 'next/router';
 
-import type {
-  PageSections,
-  PageSectionsCoreServices,
-  PageSectionsCoreServicesServices,
-} from '.tina';
+import type { PageSectionsCoreServices } from '.tina';
 
 import { Title } from '../../title';
 import { CoreServiceBox, MoreBox } from './core-services.components';
@@ -28,7 +24,7 @@ export const CoreServicesBlock: React.FC<PageSectionsCoreServices> = (
   return (
     <Box
       w="full"
-      backgroundImage="linear-gradient(180deg, #FFF1E4 0%, #FED7E2 80%, #FFF1E4 100%)" // bg > pink.100
+      backgroundImage="linear-gradient(180deg, var(--chakra-colors-chakra-body-bg) 0%, #FED7E2 80%, var(--chakra-colors-chakra-body-bg) 100%)" // bg > pink.100
     >
       <Container
         as="section"

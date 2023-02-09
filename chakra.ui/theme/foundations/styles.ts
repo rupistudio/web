@@ -52,7 +52,7 @@ export const styles: ChakraTheme['styles'] = {
       MozFontSmoothing: 'grayscale',
       overflowX: 'auto',
       maxW: 'full',
-      backgroundColor: 'bg',
+      backgroundColor: 'var(--chakra-colors-chakra-body-bg)',
     },
     '#__next, #root': {
       display: 'flex',

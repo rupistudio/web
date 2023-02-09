@@ -37,7 +37,7 @@ export const AboutBlock: FC<PageSectionsAbout | AboutBlockProps> = (props) => {
     <Box
       w="full"
       py={24}
-      backgroundImage="linear-gradient(180deg, #FFF1E4 0%, #FED7E2 80%, #FFF1E4 100%)" // bg > pink.100
+      backgroundImage="linear-gradient(180deg, var(--chakra-colors-chakra-body-bg) 0%, #FED7E2 80%, var(--chakra-colors-chakra-body-bg) 100%)" // bg > pink.100
     >
       <Box my={20}>
         <TitleBlock title="About Us" />

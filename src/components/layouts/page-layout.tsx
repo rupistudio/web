@@ -13,7 +13,7 @@ import {
   transitionDown as variants,
 } from 'chakra.ui';
 
-import { isProd } from '@/utils';
+import { isBrowser, isProd } from '@/utils';
 import { SEOConfig } from '@/utils/seo';
 
 export type LayoutProps = {
@@ -24,10 +24,8 @@ export type LayoutProps = {
     showFooter: boolean;
     showReviews: boolean;
   };
-  colors?: {
-    backgroundColor?: ChakraProps['backgroundColor'];
-    color?: ChakraProps['color'];
-  };
+  backgroundColor?: ChakraProps['backgroundColor'];
+  color?: ChakraProps['color'];
   seo?: {
     title?: string;
     description?: string;
@@ -47,35 +45,60 @@ export const PageLayout: React.FC<LayoutProps> = ({
   title = 'Site Title',
   description = '',
   layout,
-  colors,
+  color,
+  backgroundColor,
   seo, // @TODO: add image from tina
   children,
 }) => {
-
   useEffect(() => {
-    if (colors?.backgroundColor !== 'bg') return;
-    document.body.style.backgroundColor = colors?.backgroundColor;
-  }, [colors?.backgroundColor]);
+    if (!isBrowser) return;
+    if (backgroundColor) {
+      document.body.style.setProperty(
+        `--chakra-colors-chakra-body-bg`,
+        `var(--chakra-colors-${backgroundColor})`
+      );
+    }
+
+    // console.log(
+    //   '🚀 | file: page-layout.tsx:63 | backgroundColor',
+    //   window
+    //     .getComputedStyle(document.body)
+    //     .getPropertyValue('--chakra-colors-chakra-body-bg'),
+    //   '...',
+    //   backgroundColor
+    // );
+    if (color) {
+      document.body.style.setProperty(
+        `--chakra-colors-chakra-body-text`,
+        `var(--chakra-colors-${color})`
+      );
+    }
+
+    // console.log(
+    //   '🚀 | file: page-layout.tsx:76 | color',
+    //   window
+    //     .getComputedStyle(document.body)
+    //     .getPropertyValue('--chakra-colors-chakra-body-text'),
+    //   '...',
+    //   color
+    // );
+  }, [backgroundColor, color]);
 
   return (
     <>
       <NextSeo
-        {...SEOConfig(
-          seo?.title || title,
-          '', // @TODO: remove subtitle param from SEOConfig
-          seo?.description || description
-        )}
+        {...SEOConfig(seo?.title || title, seo?.description || description)}
       />
       <SocialShare twitter facebook pinterest />
       <Sidebar />
       {layout?.showHeader && <Header />}
       <Main
         displayHeader={!!layout?.showHeader}
-        color={colors?.color ?? 'text'}
+        color={color ?? 'text'}
         showReviews={!!layout?.showReviews}
       >
         {children}
-        {!isProd && layout?.showReviews ? (
+        {isProd && layout?.showReviews ? (
           <>
             <Script src={process.env.NEXT_PUBLIC_TRUSTMARY} async />
             <Box id="reviews" pt={12}>
@@ -91,6 +114,7 @@ export const PageLayout: React.FC<LayoutProps> = ({
 
 type MainProps = {
   color: ChakraProps['color'];
+  // bg: ChakraProps['backgroundColor'];
   displayHeader: boolean;
   showReviews: boolean;
   children: React.ReactNode;
@@ -98,6 +122,7 @@ type MainProps = {
 
 const Main: React.FC<MainProps> = ({
   color,
+  // bg,
   displayHeader,
   showReviews,
   children,
@@ -115,7 +140,7 @@ const Main: React.FC<MainProps> = ({
         mt={displayHeader ? 36 : 0}
         pb={displayHeader ? '4em' : 0}
         minH="100vh"
-        mb={!isProd && showReviews ? 20 : 0}
+        mb={isProd && showReviews ? 20 : 0}
       >
         <SkipNavContent />
         <Box position="relative" w="full" overflowX="hidden" color={color}>
