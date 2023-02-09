@@ -10,7 +10,7 @@ type LocationCTABlockProps = {
   address?: string;
 };
 
-export const LocationCTABlock: FC<
+export const LocationCTA: FC<
   PageSectionsLocationCta | LocationCTABlockProps
 > = (props) => {
   // @TODO: consider adding address to tina schema

@@ -15,9 +15,10 @@ ContactBlock,
 CoreServicesBlock,
 CoverImageBlock,
 DividerBlock,
+EmailCTA,
 FullLogoBlock,
 HeroBlock,
-LocationCTABlock,
+LocationCTA,
 PageLayout,
 ServiceMenu,
 SimpleContent,
@@ -46,14 +47,14 @@ export const PageBlocks: React.FC<Page> = ({ sections }) => {
   return (
     <>
       {sections?.length &&
-        sections?.map((section) => {
+        sections?.map((section, i) => {
           switch (section?.__typename) {
             case 'PageSectionsHero':
               return <HeroBlock {...section} key={section.__typename} />;
             case 'PageSectionsAbout':
               return <AboutBlock {...section} key={section.__typename} />;
             case 'PageSectionsLocationCta':
-              return <LocationCTABlock {...section} key={section.__typename} />;
+              return <LocationCTA {...section} key={section.__typename} />;
             case 'PageSectionsCoreServices':
               return (
                 <CoreServicesBlock {...section} key={section.__typename} />
@@ -69,9 +70,11 @@ export const PageBlocks: React.FC<Page> = ({ sections }) => {
             case 'PageSectionsLogo':
               return <FullLogoBlock {...section} key={section.__typename} />;
             case 'PageSectionsContent':
-              return <SimpleContent {...section} key={section.__typename} />;
+              return <SimpleContent {...section} key={`${section.__typename}-${i}`} />;
             case 'PageSectionsServiceMenu':
               return <ServiceMenu {...section} key={section.__typename} />;
+            case 'PageSectionsEmailCta':
+              return <EmailCTA {...section} key={section.__typename} />;
           }
         })}
     </>

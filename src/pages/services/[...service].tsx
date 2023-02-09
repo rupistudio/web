@@ -13,6 +13,7 @@ import client from '.tina/__generated__/client';
 import {
   CoverImageBlock,
   DividerBlock,
+  EmailCTA,
   FullLogoBlock,
   PageLayout,
   ServiceMenu,
@@ -42,7 +43,7 @@ export const ServiceBlocks: React.FC<Service> = ({ sections }) => {
   return (
     <>
       {sections?.length &&
-        sections?.map((section) => {
+        sections?.map((section, i) => {
           switch (section?.__typename) {
             case 'ServiceSectionsTitle':
               return <TitleBlock {...section} key={section.__typename} />;
@@ -53,9 +54,11 @@ export const ServiceBlocks: React.FC<Service> = ({ sections }) => {
             case 'ServiceSectionsLogo':
               return <FullLogoBlock {...section} key={section.__typename} />;
             case 'ServiceSectionsContent':
-              return <SimpleContent {...section} key={section.__typename} />;
+              return <SimpleContent {...section} key={`${section.__typename}-${i}`} />;
             case 'ServiceSectionsServiceMenu':
               return <ServiceMenu {...section} key={section.__typename} />;
+            case 'ServiceSectionsEmailCta':
+              return <EmailCTA {...section} key={section.__typename} />;
           }
         })}
     </>
