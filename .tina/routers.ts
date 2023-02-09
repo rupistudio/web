@@ -6,6 +6,7 @@ export const routers = {
     return `/${document._sys.filename}`;
   },
   service: ({ document }) => {
-    return `/services/${document._sys.filename}`;
+    const crumbs = document?._sys?.breadcrumbs;
+    return `/services/${crumbs.join('/')}`;
   },
 };
