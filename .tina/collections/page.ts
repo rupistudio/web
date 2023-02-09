@@ -5,6 +5,7 @@ import { fields, templates } from '../utils';
 // Zw7l2
 export const page: Collection['fields'] = [
   ...fields.page,
+  ...fields.colors,
   {
     type: 'object',
     name: 'seo',
@@ -19,6 +20,5 @@ export const page: Collection['fields'] = [
     ui: { visualSelector: true },
     templates: [...templates.page, ...templates.service], // ZWgF2
   },
-  ...fields.colors,
   ...fields.layout,
 ];

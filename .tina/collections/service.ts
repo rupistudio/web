@@ -7,6 +7,7 @@ export const service: Collection['fields'] = [
   ...fields.service,
   ...fields.image,
   ...fields.relations,
+  ...fields.colors,
   {
     type: 'object',
     name: 'seo',
@@ -21,6 +22,5 @@ export const service: Collection['fields'] = [
     ui: { visualSelector: true },
     templates: templates.service, // ZWgF2
   },
-  ...fields.colors,
   ...fields.layout,
 ];

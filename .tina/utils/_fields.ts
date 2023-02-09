@@ -174,7 +174,7 @@ export const fields: Record<string, Template['fields']> = {
     {
       type: 'string',
       name: 'color',
-      label: 'Color',
+      label: 'Text / Line Color',
       options: options.colors,
     },
     {

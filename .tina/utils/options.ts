@@ -46,7 +46,7 @@ const colorTokens = [
   'navLink',
   'placeholder',
   'rootBorder',
-];
+].map(mapOptions);
 
 export const options = {
   sizes: [
@@ -257,7 +257,13 @@ export const options = {
       'base-dark',
     ].map(mapOptions),
   },
-  colors: colors
-    .map((color) => colorShades.map((shade) => mapOptions(`${color}.${shade}`)))
-    .flat(),
+  colors: colorTokens.concat(
+    colors
+      // @NOTE: we're using a '-' instead of a '.' to separate the color and shade tokens
+      // because we're using css variables on the front-end to set these values which requires the '-'
+      .map((color) =>
+        colorShades.map((shade) => mapOptions(`${color}-${shade}`))
+      )
+      .flat()
+  ),
 };
