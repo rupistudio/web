@@ -1,23 +1,23 @@
 import { useTina } from 'tinacms/dist/react';
 
-import type { Service,ServiceQuery } from '.tina';
+import type { Service, ServiceQuery } from '.tina';
 
 import type {
-GetStaticPaths,
-GetStaticProps,
-GetStaticPropsContext,
-InferGetStaticPropsType
+  GetStaticPaths,
+  GetStaticProps,
+  GetStaticPropsContext,
+  InferGetStaticPropsType,
 } from 'next';
 
 import client from '.tina/__generated__/client';
 import {
-CoverImageBlock,
-DividerBlock,
-FullLogoBlock,
-PageLayout,
-ServiceMenu,
-SimpleContent,
-TitleBlock
+  CoverImageBlock,
+  DividerBlock,
+  FullLogoBlock,
+  PageLayout,
+  ServiceMenu,
+  SimpleContent,
+  TitleBlock,
 } from '@/components';
 import { getBaseUrl } from '@/utils';
 
@@ -55,7 +55,7 @@ export const ServiceBlocks: React.FC<Service> = ({ sections }) => {
             case 'ServiceSectionsContent':
               return <SimpleContent {...section} key={section.__typename} />;
             case 'ServiceSectionsServiceMenu':
-            return <ServiceMenu {...section} key={section.__typename} />;
+              return <ServiceMenu {...section} key={section.__typename} />;
           }
         })}
     </>
@@ -69,7 +69,7 @@ export const getStaticPaths: GetStaticPaths = async () => ({
 
 export const getStaticProps: GetStaticProps = async (context) => ({
   props: await getTinaServiceProps(context),
-  revalidate: 300000,
+  revalidate: 30000,
 });
 
 export const getTinaServicePaths = async () => {

@@ -1,27 +1,27 @@
 import { useTina } from 'tinacms/dist/react';
 
-import type { Page, PageQuery } from '.tina';
+import type { Page,PageQuery } from '.tina';
 import type {
-  GetStaticPaths,
-  GetStaticProps,
-  GetStaticPropsContext,
-  InferGetStaticPropsType,
+GetStaticPaths,
+GetStaticProps,
+GetStaticPropsContext,
+InferGetStaticPropsType
 } from 'next';
 
 import client from '.tina/__generated__/client';
 import {
-  AboutBlock,
-  ContactBlock,
-  CoreServicesBlock,
-  CoverImageBlock,
-  DividerBlock,
-  FullLogoBlock,
-  HeroBlock,
-  LocationCTABlock,
-  PageLayout,
-  ServiceMenu,
-  SimpleContent,
-  TitleBlock,
+AboutBlock,
+ContactBlock,
+CoreServicesBlock,
+CoverImageBlock,
+DividerBlock,
+FullLogoBlock,
+HeroBlock,
+LocationCTABlock,
+PageLayout,
+ServiceMenu,
+SimpleContent,
+TitleBlock
 } from '@/components';
 import { getBaseUrl } from '@/utils';
 
@@ -85,7 +85,7 @@ export const getStaticPaths: GetStaticPaths = async () => ({
 
 export const getStaticProps: GetStaticProps = async (context) => ({
   props: await getTinaPageProps(context),
-  revalidate: 300000,
+  revalidate: false,
 });
 
 export const getTinaPagePaths = async () => {

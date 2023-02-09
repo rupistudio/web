@@ -14,6 +14,7 @@ import type {
   PageSectionsServiceMenuServices,
   ServiceSectionsServiceMenu,
   ServiceSectionsServiceMenuServices,
+  ServiceServices,
 } from '.tina';
 
 import { truncate } from '@/utils';
@@ -24,24 +25,18 @@ export const ServiceCard: React.FC<
     category?: string;
   }
 > = (props) => {
-  const serviceOptions:
-    | (ServiceSectionsServiceMenu | PageSectionsServiceMenu)
-    | null
-    | undefined = props?.service?.sections
-    ?.map((section: any) => {
-      // @FIXME: fix this type
-      if (section?.__typename == 'ServiceSectionServiceMenu') {
-        return section;
-      }
-      if (section?.__typename == 'PageSectionServiceMenu') {
-        return section;
-      }
-      return null;
-    })
-    .filter(Boolean)[0];
+  const serviceOptions: ServiceServices | null | undefined =
+    props?.service?.services
+      ?.map((service: ServiceServices | null | undefined) => {
+        if (service?.__typename == 'ServiceServices') {
+          return service;
+        }
+        return null;
+      })
+      .filter(Boolean)[0];
 
-  const hasOptions = !!serviceOptions?.types?.length;
-  const hasServices = !!serviceOptions?.services?.length;
+  const hasOptions = !!serviceOptions?.service?.types?.length;
+  const hasServices = !!serviceOptions?.service?.services?.length;
   const serviceLink = props?.category
     ? `/services/${props?.category}/${props.service?.slug}`
     : `/services/${props.service?.slug}`;
