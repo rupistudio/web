@@ -9,3 +9,4 @@ export * from "./cover-image"
 export * from "./divider"
 export * from "./full-logo-block"
 export * from './simple-content'
+export * from './service-menu'

@@ -19,6 +19,7 @@ import {
   HeroBlock,
   LocationCTABlock,
   PageLayout,
+  ServiceMenu,
   SimpleContent,
   TitleBlock,
 } from '@/components';
@@ -69,6 +70,8 @@ export const PageBlocks: React.FC<Page> = ({ sections }) => {
               return <FullLogoBlock {...section} key={section.__typename} />;
             case 'PageSectionsContent':
               return <SimpleContent {...section} key={section.__typename} />;
+            case 'PageSectionsServiceMenu':
+              return <ServiceMenu {...section} key={section.__typename} />;
           }
         })}
     </>

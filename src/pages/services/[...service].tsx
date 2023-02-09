@@ -1,22 +1,23 @@
 import { useTina } from 'tinacms/dist/react';
 
-import type { Service, ServiceQuery } from '.tina';
+import type { Service,ServiceQuery } from '.tina';
 
 import type {
-  GetStaticPaths,
-  GetStaticProps,
-  GetStaticPropsContext,
-  InferGetStaticPropsType,
+GetStaticPaths,
+GetStaticProps,
+GetStaticPropsContext,
+InferGetStaticPropsType
 } from 'next';
 
 import client from '.tina/__generated__/client';
 import {
-  CoverImageBlock,
-  DividerBlock,
-  FullLogoBlock,
-  PageLayout,
-  SimpleContent,
-  TitleBlock,
+CoverImageBlock,
+DividerBlock,
+FullLogoBlock,
+PageLayout,
+ServiceMenu,
+SimpleContent,
+TitleBlock
 } from '@/components';
 import { getBaseUrl } from '@/utils';
 
@@ -53,6 +54,8 @@ export const ServiceBlocks: React.FC<Service> = ({ sections }) => {
               return <FullLogoBlock {...section} key={section.__typename} />;
             case 'ServiceSectionsContent':
               return <SimpleContent {...section} key={section.__typename} />;
+            case 'ServiceSectionsServiceMenu':
+            return <ServiceMenu {...section} key={section.__typename} />;
           }
         })}
     </>
