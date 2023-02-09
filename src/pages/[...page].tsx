@@ -1,28 +1,28 @@
 import { useTina } from 'tinacms/dist/react';
 
-import type { Page,PageQuery } from '.tina';
+import type { Page, PageQuery } from '.tina';
 import type {
-GetStaticPaths,
-GetStaticProps,
-GetStaticPropsContext,
-InferGetStaticPropsType
+  GetStaticPaths,
+  GetStaticProps,
+  GetStaticPropsContext,
+  InferGetStaticPropsType,
 } from 'next';
 
 import client from '.tina/__generated__/client';
 import {
-AboutBlock,
-ContactBlock,
-CoreServicesBlock,
-CoverImageBlock,
-DividerBlock,
-EmailCTA,
-FullLogoBlock,
-HeroBlock,
-LocationCTA,
-PageLayout,
-ServiceMenu,
-SimpleContent,
-TitleBlock
+  AboutBlock,
+  ContactBlock,
+  CoreServicesBlock,
+  CoverImageBlock,
+  DividerBlock,
+  EmailCTA,
+  FullLogoBlock,
+  HeroBlock,
+  LocationCTA,
+  PageLayout,
+  ServiceMenu,
+  SimpleContent,
+  TitleBlock,
 } from '@/components';
 import { getBaseUrl } from '@/utils';
 
@@ -43,7 +43,7 @@ const Page: React.FC<PageProps> = (props) => {
 
 export default Page;
 
-export const PageBlocks: React.FC<Page> = ({ sections }) => {
+export const PageBlocks: React.FC<Page> = ({ sections, ...props }) => {
   return (
     <>
       {sections?.length &&
@@ -70,7 +70,12 @@ export const PageBlocks: React.FC<Page> = ({ sections }) => {
             case 'PageSectionsLogo':
               return <FullLogoBlock {...section} key={section.__typename} />;
             case 'PageSectionsContent':
-              return <SimpleContent {...section} key={`${section.__typename}-${i}`} />;
+              return (
+                <SimpleContent
+                  {...section}
+                  key={`${section.__typename}-${i}`}
+                />
+              );
             case 'PageSectionsServiceMenu':
               return <ServiceMenu {...section} key={section.__typename} />;
             case 'PageSectionsEmailCta':

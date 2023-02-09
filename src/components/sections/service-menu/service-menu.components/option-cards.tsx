@@ -1,23 +1,22 @@
 import { AspectRatio, Box, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 
-import type {
-  PageSectionsServiceMenuTypes,
-  ServiceSectionsServiceMenuTypes,
-} from '.tina';
+import type { ServiceSectionsServiceMenuTypes } from '.tina';
 import { truncate } from '@/utils';
 
 export const OptionCard: React.FC<
   ServiceSectionsServiceMenuTypes | ServiceSectionsServiceMenuTypes
 > = (props) => {
   return (
-    <Stack layerStyle="card.option" direction="row" minW="xl">
-      <Flex
-        layerStyle="card.header"
-        position="relative"
-        borderLeftRadius="xl"
-        w="30%"
-      >
+    <Stack
+      direction="column"
+      bg="white"
+      maxW="2xl"
+      w="full"
+      borderRadius="lg"
+      overflow="hidden"
+    >
+      <Flex layerStyle="card.header" position="relative" w="100%">
         {props?.type?.price ? (
           <Box
             position="absolute"
@@ -25,6 +24,7 @@ export const OptionCard: React.FC<
             bottom={4}
             left={0}
             boxSize={16}
+            border="1px"
             _after={{
               content: '""',
               position: 'absolute',
@@ -46,7 +46,7 @@ export const OptionCard: React.FC<
                 fontWeight={600}
                 fontFamily="body"
                 fontSize={{ base: 'md', xl: '2xl' }}
-                data-tinafield="price"
+                // data-tinafield="price"
               >
                 ${props?.type?.price}
               </Heading>
@@ -66,14 +66,29 @@ export const OptionCard: React.FC<
       </Flex>
       <Stack layerStyle="card.body" h="full">
         {props.type?.title ? (
-          <Text px={3} textStyle="card.title-sm" data-tinafield="title">
+          <Text
+            px={3}
+            textStyle="card.title-sm"
+            // data-tinafield="title"
+          >
             {props.type?.title}
           </Text>
         ) : null}
 
-        {props.type?.description ? (
-          <Text color="gray.700" px={3} data-tinafield="description">
-            {truncate(props.type?.description, 175)}
+        {props.type?.advanced_pricing ? (
+          <Text
+            color="gray.700"
+            px={3}
+            // data-tinafield="advanced_pricing"
+          >
+            {props?.type.advanced_pricing.length &&
+              props.type?.advanced_pricing.map((price) => {
+                return (
+                  <Flex key={price?.price}>
+                    {price?.unit}: ${price?.price}
+                  </Flex>
+                );
+              })}
           </Text>
         ) : null}
       </Stack>
@@ -90,8 +105,8 @@ export const SimpleOptionCard: React.FC<
       position="relative"
       rounded="xl"
       w="100%"
-      borderColor="gold"
       border="4px solid"
+      borderColor="primary"
     >
       {props?.type?.price ? (
         <Box

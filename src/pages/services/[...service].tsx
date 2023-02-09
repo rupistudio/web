@@ -31,15 +31,15 @@ const Service: React.FC<ServiceProps> = (props) => {
     data: props.data,
   });
   return (
-    <PageLayout {...data.service}>
-      <ServiceBlocks {...data.service} />
+    <PageLayout {...data?.service}>
+      <ServiceBlocks {...data?.service} />
     </PageLayout>
   );
 };
 
 export default Service;
 
-export const ServiceBlocks: React.FC<Service> = ({ sections }) => {
+export const ServiceBlocks: React.FC<Service> = ({ sections, ...props }) => {
   return (
     <>
       {sections?.length &&
@@ -54,9 +54,20 @@ export const ServiceBlocks: React.FC<Service> = ({ sections }) => {
             case 'ServiceSectionsLogo':
               return <FullLogoBlock {...section} key={section.__typename} />;
             case 'ServiceSectionsContent':
-              return <SimpleContent {...section} key={`${section.__typename}-${i}`} />;
+              return (
+                <SimpleContent
+                  {...section}
+                  key={`${section.__typename}-${i}`}
+                />
+              );
             case 'ServiceSectionsServiceMenu':
-              return <ServiceMenu {...section} key={section.__typename} />;
+              return (
+                <ServiceMenu
+                  {...section}
+                  key={section.__typename}
+                  category={props?.slug}
+                />
+              );
             case 'ServiceSectionsEmailCta':
               return <EmailCTA {...section} key={section.__typename} />;
           }

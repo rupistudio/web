@@ -21,11 +21,20 @@ export const type: Collection['fields'] = [
     name: 'advanced_pricing',
     label: 'Advanced Pricing',
     list: true,
+    ui: {
+      // itemProps: (item) => ({
+      //   key: item.unit || '',
+      //   label: `${item.unit} -$${item.price}` || '',
+      //   value: item.unit || '',
+      // }),
+    },
     fields: [
       {
         type: 'string',
         name: 'unit',
         label: 'Unit, e.g. 1 hour, 1 session',
+        isTitle: true,
+        required: true,
       },
       {
         type: 'string',

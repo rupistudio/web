@@ -18,7 +18,11 @@ import type {
 
 import { unplauralize } from '@/utils/fns';
 import { Title } from '../../title';
-import { ServiceCard, SimpleOptionCard } from './service-menu.components';
+import {
+  OptionCard,
+  ServiceCard,
+  SimpleOptionCard,
+} from './service-menu.components';
 
 export const ServiceMenu: React.FC<
   | (PageSectionsServiceMenu & { category?: string })
@@ -76,8 +80,14 @@ export const ServiceMenu: React.FC<
               justifyContent="center"
             >
               {props?.types?.map((type) => {
+                console.log('🚀 | file: service-menu.tsx:83 | type', type);
                 if (type?.__typename == 'ServiceSectionsServiceMenuTypes') {
-                  return <SimpleOptionCard key={type?.type?.id} {...type} />;
+                  if (type.type?.advanced_pricing) {
+                    return <OptionCard key={type?.type?.id} {...type} />;
+                  }
+                  if (type.type?.price && !type.type?.advanced_pricing) {
+                    return <SimpleOptionCard key={type?.type?.id} {...type} />;
+                  }
                 }
                 // @FIXME: is this needed?
                 // if (

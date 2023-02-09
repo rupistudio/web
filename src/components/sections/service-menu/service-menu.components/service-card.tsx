@@ -10,11 +10,9 @@ import Image from 'next/image';
 import Link from 'next/link';
 
 import type {
-  PageSectionsServiceMenu,
   PageSectionsServiceMenuServices,
   ServiceSectionsServiceMenu,
   ServiceSectionsServiceMenuServices,
-  ServiceServices,
 } from '.tina';
 
 import { truncate } from '@/utils';
@@ -25,18 +23,18 @@ export const ServiceCard: React.FC<
     category?: string;
   }
 > = (props) => {
-  const serviceOptions: ServiceServices | null | undefined =
-    props?.service?.services
-      ?.map((service: ServiceServices | null | undefined) => {
-        if (service?.__typename == 'ServiceServices') {
-          return service;
+  const serviceOptions: ServiceSectionsServiceMenu | null | undefined =
+    props?.service?.sections
+      ?.map((section) => {
+        if (section?.__typename == 'ServiceSectionsServiceMenu') {
+          return section;
         }
         return null;
       })
       .filter(Boolean)[0];
 
-  const hasOptions = !!serviceOptions?.service?.types?.length;
-  const hasServices = !!serviceOptions?.service?.services?.length;
+  const hasOptions = !!serviceOptions?.types?.length;
+  const hasServices = !!serviceOptions?.services?.length;
   const serviceLink = props?.category
     ? `/services/${props?.category}/${props.service?.slug}`
     : `/services/${props.service?.slug}`;

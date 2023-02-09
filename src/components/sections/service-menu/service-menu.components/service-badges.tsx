@@ -7,7 +7,10 @@ import type {
 } from '.tina';
 
 export const ServiceBadges: React.FC<{
-  data: ServiceServices | null | undefined;
+  data:
+    | (ServiceSectionsServiceMenu | PageSectionsServiceMenu)
+    | null
+    | undefined;
   hasOptions: boolean;
   hasServices: boolean;
 }> = ({ data, hasOptions, hasServices }) => {
@@ -31,7 +34,7 @@ export const ServiceBadges: React.FC<{
       maxW="240px"
     >
       {hasOptions
-        ? data?.service?.types?.slice(0, 2).map((type, i) => {
+        ? data?.types?.slice(0, 2).map((type, i) => {
             return (
               <Badge
                 key={`${type?.type?.id}-${i}`}
@@ -45,7 +48,7 @@ export const ServiceBadges: React.FC<{
           })
         : null}
       {!hasOptions && hasServices
-        ? data?.service?.services?.slice(0, 2).map((service, i) => {
+        ? data?.services?.slice(0, 2).map((service, i) => {
             return (
               <Badge
                 key={`${service?.service?.id}-${i}`}
