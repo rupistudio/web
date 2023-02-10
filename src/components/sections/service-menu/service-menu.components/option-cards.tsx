@@ -76,7 +76,8 @@ export const OptionCard: React.FC<
         ) : null}
 
         {props.type?.advanced_pricing ? (
-          <Text
+          <Box
+            as="ul"
             color="gray.700"
             px={3}
             // data-tinafield="advanced_pricing"
@@ -84,12 +85,20 @@ export const OptionCard: React.FC<
             {props?.type.advanced_pricing.length &&
               props.type?.advanced_pricing.map((price) => {
                 return (
-                  <Flex key={price?.price}>
-                    {price?.unit}: ${price?.price}
+                  <Flex
+                    key={price?.price}
+                    as="li"
+                    justifyContent="space-between"
+                    borderBottom="1px solid"
+                    borderColor="gray.200"
+                    my={2}
+                  >
+                    <Text>{price?.unit}</Text>
+                    <Text fontWeight="bold" color="teal.500">${price?.price}</Text>
                   </Flex>
                 );
               })}
-          </Text>
+          </Box>
         ) : null}
       </Stack>
     </Stack>
