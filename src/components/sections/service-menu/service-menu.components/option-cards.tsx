@@ -2,7 +2,6 @@ import { AspectRatio, Box, Flex, Heading, Stack, Text } from '@chakra-ui/react';
 import Image from 'next/image';
 
 import type { ServiceSectionsServiceMenuTypes } from '.tina';
-import { truncate } from '@/utils';
 
 export const OptionCard: React.FC<
   ServiceSectionsServiceMenuTypes | ServiceSectionsServiceMenuTypes
@@ -94,7 +93,9 @@ export const OptionCard: React.FC<
                     my={2}
                   >
                     <Text>{price?.unit}</Text>
-                    <Text fontWeight="bold" color="teal.500">${price?.price}</Text>
+                    <Text fontWeight="bold" color="teal.500">
+                      ${price?.price}
+                    </Text>
                   </Flex>
                 );
               })}
@@ -115,7 +116,7 @@ export const SimpleOptionCard: React.FC<
       rounded="xl"
       w="100%"
       border="4px solid"
-      borderColor="primary"
+      borderColor="secondary"
     >
       {props?.type?.price ? (
         <Box

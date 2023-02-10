@@ -130,7 +130,7 @@ export const customLayerStyles = {
       gap: 3,
       rounded: 'xl',
       border: '2px',
-      borderColor: 'gray.400',
+      borderColor: 'secondary',
     },
     benefits: {
       ...contentDefaults,
