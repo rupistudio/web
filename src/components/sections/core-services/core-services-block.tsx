@@ -1,5 +1,4 @@
 import { AspectRatio, Box, Container, SimpleGrid } from '@chakra-ui/react';
-import { useRouter } from 'next/router';
 
 import type { PageSectionsCoreServices } from '.tina';
 
@@ -20,11 +19,10 @@ export type Category = {
 export const CoreServicesBlock: React.FC<PageSectionsCoreServices> = (
   props
 ) => {
-  const router = useRouter();
   return (
     <Box
       w="full"
-      backgroundImage="linear-gradient(180deg, var(--chakra-colors-chakra-body-bg) 0%, #FED7E2 80%, var(--chakra-colors-chakra-body-bg) 100%)" // bg > pink.100
+      backgroundImage="linear-gradient(180deg, var(--chakra-colors-chakra-body-bg) 0%, var(--chakra-colors-pink-100) 80%, var(--chakra-colors-chakra-body-bg) 100%)" // bg > pink.100
     >
       <Container
         as="section"
@@ -62,7 +60,7 @@ export const CoreServicesBlock: React.FC<PageSectionsCoreServices> = (
               )
             : null}
           <AspectRatio ratio={16 / 9}>
-            <MoreBox onClick={() => router.push('/services')} />
+            <MoreBox />
           </AspectRatio>
         </SimpleGrid>
       </Container>
