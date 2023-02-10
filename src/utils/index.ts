@@ -7,3 +7,4 @@ export * from './lodash';
 export * from './logger';
 export * from './next';
 export * from './react';
+export * from './tina';

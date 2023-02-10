@@ -15,13 +15,11 @@ import type {
   ServiceSectionsServiceMenuServices,
 } from '.tina';
 
-import { truncate } from '@/utils';
+import { getServicePathFromId, truncate } from '@/utils';
 import { ServiceBadges } from './service-badges';
 
 export const ServiceCard: React.FC<
-  (PageSectionsServiceMenuServices | ServiceSectionsServiceMenuServices) & {
-    category?: string;
-  }
+  PageSectionsServiceMenuServices | ServiceSectionsServiceMenuServices
 > = (props) => {
   const serviceOptions: ServiceSectionsServiceMenu | null | undefined =
     props?.service?.sections
@@ -35,9 +33,8 @@ export const ServiceCard: React.FC<
 
   const hasOptions = !!serviceOptions?.types?.length;
   const hasServices = !!serviceOptions?.services?.length;
-  const serviceLink = props?.category
-    ? `/services/${props?.category}/${props.service?.slug}`
-    : `/services/${props.service?.slug}`;
+  const serviceLink2 =
+    getServicePathFromId(String(props?.service?.id)) ?? '/services';
 
   return (
     <Stack layerStyle="card.default" direction={{ base: 'column', md: 'row' }}>
@@ -84,7 +81,7 @@ export const ServiceCard: React.FC<
             >
               <Button
                 as={Link}
-                href={encodeURI(serviceLink)}
+                href={encodeURI(serviceLink2)}
                 flex={1}
                 fontSize={'sm'}
                 colorScheme="teal"

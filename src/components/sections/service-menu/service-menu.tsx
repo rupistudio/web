@@ -88,7 +88,7 @@ export const ServiceMenu: React.FC<
                     return <SimpleOptionCard key={type?.type?.id} {...type} />;
                   }
                 }
-                // @FIXME: is this needed?
+                // @FIXME: is this needed? @NOTE: Not needed, pages do not render service menu block
                 // if (
                 //   type?.__typename == 'PageSectionsServiceMenuTypes'
                 // ) {
@@ -101,13 +101,8 @@ export const ServiceMenu: React.FC<
             <>
               {props?.types?.length ? (
                 <>
-                  <Divider borderColor="currentColor" my={4} />
-                  <Heading
-                    as="h3"
-                    textAlign="center"
-                    textDecor="underline"
-                    py={6}
-                  >
+                  <Divider borderColor="secondary" my={4} />
+                  <Heading as="h3" textAlign="center" py={6} color="accent">
                     More {unplauralize(String(props?.category))} Related
                     Services
                   </Heading>
@@ -129,7 +124,6 @@ export const ServiceMenu: React.FC<
                       <ServiceCard
                         key={service?.service?.id}
                         service={service?.service}
-                        category={props?.category}
                       />
                     );
                   })}

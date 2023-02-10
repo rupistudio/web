@@ -2,26 +2,20 @@ import { Box, chakra } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import type {
-  PageSectionsCoreServicesServices,
-  ServiceSectionsServiceMenuServicesService,
-} from '.tina';
+import type { ServiceSectionsServiceMenuServicesService } from '.tina';
 
-import { truncate } from '@/utils';
+import { getServicePathFromId, truncate } from '@/utils';
 import { MotionBox } from 'chakra.ui';
 
 const ChLink = chakra(Link);
 
 type CoreServiceBoxProps = {
-  // item: PageSectionsCoreServicesServices['service'];
   item: ServiceSectionsServiceMenuServicesService;
 };
 
 export const CoreServiceBox: React.FC<CoreServiceBoxProps> = (props) => {
-  console.log(
-    // @ts-expect-error @NOTE: internalSys is not accessible because of the type being used
-    props.item?._internalSys?.breadcrumbs[0]
-  );
+  const serviceLink =
+    getServicePathFromId(String(props.item.id)) ?? '/services';
   return (
     <MotionBox
       key={props.item?.image?.src}
@@ -30,9 +24,7 @@ export const CoreServiceBox: React.FC<CoreServiceBoxProps> = (props) => {
       h="full"
       whileHover={{ y: -10 }}
     >
-      <ChLink
-        href={`${props?.item?.id.split('.')[0]?.replace('_content', '')}`}
-      >
+      <ChLink href={encodeURI(serviceLink)}>
         {props.item?.image ? (
           <Box w="full" h="full" objectFit="cover">
             <Image
