@@ -26,8 +26,6 @@ type HeroBlockProps = {
     alt?: string;
     attr?: string;
     caption?: string;
-    // width?: string;
-    // height?: string;
   };
 };
 
@@ -138,29 +136,17 @@ type TinaImage = {
   alt?: string;
   attr?: string;
   caption?: string;
-  // width?: string;
-  // height?: string;
 };
 
 export const ColumnRight: React.FC<{
   image: TinaImage | PageSectionsHeroImage;
 }> = ({ image }) => {
   return (
-    <Box
-      w="full"
-      minW="500px"
-      // p={{ base: 0, sm: 0, md: 0, lg: 0 }}
-      mb={{ base: 20, sm: 0 }}
-      flex={1}
-    >
-      {/* <ResponsiveDebugger /> */}
-      {/* eslint-disable-next-line jsx-a11y/alt-text */}
+    <Box w="full" minW="500px" mb={{ base: 20, sm: 0 }} flex={1}>
       {image && (
         <AspectRatio ratio={1}>
           <Image
             src={String(image?.src)}
-            // width={Number(image?.width)}
-            // height={Number(image?.height)}
             alt={image.alt + ' | ' + image.attr}
             fill={true}
             priority
