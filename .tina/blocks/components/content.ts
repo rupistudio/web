@@ -1,6 +1,5 @@
 import { Template } from 'tinacms';
 import { mapOptions, options } from '../../utils';
-import { fields } from '../../utils/_fields'; // @TODO: extract fields
 
 const quotes = [
   "Beauty is not just skin deep. It's a reflection of who you are on the inside.",
@@ -21,7 +20,7 @@ export const content: Template = {
       text: quotes[randomeNumberBetween(0, quotes.length - 1)], // selects a new quote on each build
       style: 'basic',
     },
-    previewSrc: '/blocks/preview-content.webp', // @TODO: add preview image
+    previewSrc: '/blocks/preview-content.webp',
   },
   fields: [
     {
