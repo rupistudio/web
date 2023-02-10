@@ -93,7 +93,7 @@ export const getStaticPaths: GetStaticPaths = async () => ({
 
 export const getStaticProps: GetStaticProps = async (context) => ({
   props: await getTinaPageProps(context),
-  revalidate: false,
+  revalidate: 30000,
 });
 
 export const getTinaPagePaths = async () => {
