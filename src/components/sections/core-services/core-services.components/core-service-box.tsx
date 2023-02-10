@@ -26,7 +26,12 @@ export const CoreServiceBox: React.FC<CoreServiceBoxProps> = (props) => {
       h="full"
       whileHover={{ y: -10 }}
     >
-      <ChLink href={`/services/${getRouteFromId(String(props?.item?.id))}`}>
+      <ChLink
+        href={`${getRouteFromId(String(props?.item?.id))?.replace(
+          '/_content/',
+          ''
+        )}`}
+      >
         {props.item?.image ? (
           <Box w="full" h="full" objectFit="cover">
             <Image

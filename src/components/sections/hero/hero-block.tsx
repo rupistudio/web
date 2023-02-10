@@ -5,6 +5,7 @@ import {
   Container,
   Divider,
   Flex,
+  Link,
   Stack,
   Text,
   VStack,
@@ -63,7 +64,7 @@ export const HeroBlock: FC<PageSectionsHero> = (props) => {
             <CTABox
               cta={{
                 title: String(props?.cta),
-                subtitle: String(props?.phone),
+                phone: String(props?.phone),
               }}
             />
           ) : null}
@@ -157,7 +158,7 @@ export const ColumnRight: React.FC<{
   );
 };
 
-export const CTABox: FC<{ cta: { title: string; subtitle: string } }> = ({
+export const CTABox: FC<{ cta: { title: string; phone: string } }> = ({
   cta,
 }) => (
   <Box
@@ -192,6 +193,8 @@ export const CTABox: FC<{ cta: { title: string; subtitle: string } }> = ({
           {cta.title}
         </chakra.p>
         <chakra.p
+          as={Link}
+          href={`tel:${cta.phone}`}
           fontSize={{ base: '2xl', md: '2xl', xl: '2xl' }}
           fontWeight={600}
           letterSpacing="wider"
@@ -201,9 +204,9 @@ export const CTABox: FC<{ cta: { title: string; subtitle: string } }> = ({
           _hover={{
             cursor: 'pointer',
           }}
-          data-tinafield="subtitle"
+          data-tinafield="phone"
         >
-          {cta.subtitle}
+          {cta.phone}
         </chakra.p>
       </Box>
     </Flex>

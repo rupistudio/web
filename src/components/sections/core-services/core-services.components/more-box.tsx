@@ -1,18 +1,18 @@
 import { Box, Button, chakra } from '@chakra-ui/react';
-
-import type { FC } from 'react';
+import Link from 'next/link';
 
 import { Arrow } from '../../_shared.components';
 
-export const MoreBox: FC<{ onClick: () => void }> = ({ onClick }) => {
+export const MoreBox: React.FC = () => {
   return (
     <Button
+      as={Link}
+      href="/services"
       position="relative"
       variant="unstyled"
       w="100%"
       h="100%"
       display="block"
-      onClick={onClick}
     >
       <Box
         position="relative"
