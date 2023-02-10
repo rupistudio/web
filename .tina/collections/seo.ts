@@ -11,6 +11,9 @@ export const seo: Collection['fields'] = [
     type: 'string',
     name: 'description',
     label: 'Description',
+    ui: {
+      component: 'textarea',
+    },
   },
   {
     type: 'string',
@@ -21,6 +24,9 @@ export const seo: Collection['fields'] = [
     type: 'string',
     name: 'keywords',
     label: 'Keywords',
+    ui: {
+      component: 'textarea',
+    },
   },
   {
     type: 'string',
