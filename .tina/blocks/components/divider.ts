@@ -1,5 +1,5 @@
 import { Template } from 'tinacms';
-import { mapOptions,options } from '../../utils';
+import { mapOptions, options } from '../../utils';
 
 // ZWgF2
 export const divider: Template = {
@@ -7,6 +7,10 @@ export const divider: Template = {
   name: 'divider',
   ui: {
     previewSrc: '/blocks/preview-divider.webp',
+    defaultItem: {
+      orientation: 'horizontal',
+      borderColor: 'gray.300',
+    },
   },
   fields: [
     {

@@ -8,6 +8,16 @@ export const hero: Template = {
   name: 'hero',
   ui: {
     previewSrc: '/blocks/preview-hero-composite.webp',
+    defaultItem: {
+      intro: 'Intro Text',
+      heading: 'This is your heading',
+      image: {
+        src: '/uploads/people/hero-composite.webp',
+        alt: 'Hero Image',
+      },
+      cta: 'Reach Out Today',
+      phone: '(862) 571-7873',
+    },
   },
   fields: [
     {

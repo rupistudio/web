@@ -7,8 +7,10 @@ export const coverImage: Template = {
   name: 'cover',
   ui: {
     defaultItem: {
-      src: '/uploads/assets/placeholder-sq.webp',
-      alt: 'Placeholder Image',
+      image: {
+        src: '/uploads/assets/placeholder-sq.webp',
+        alt: 'Placeholder Image',
+      },
     },
     previewSrc: '/blocks/preview-section-cover.webp',
   },
