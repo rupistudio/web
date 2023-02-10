@@ -67,30 +67,12 @@ export const PageLayout: React.FC<LayoutProps> = ({
         `var(--chakra-colors-${backgroundColor})`
       );
     }
-
-    // console.log(
-    //   '🚀 | file: page-layout.tsx:63 | backgroundColor',
-    //   window
-    //     .getComputedStyle(document.body)
-    //     .getPropertyValue('--chakra-colors-chakra-body-bg'),
-    //   '...',
-    //   backgroundColor
-    // );
     if (color) {
       document.body.style.setProperty(
         `--chakra-colors-chakra-body-text`,
         `var(--chakra-colors-${color})`
       );
     }
-
-    // console.log(
-    //   '🚀 | file: page-layout.tsx:76 | color',
-    //   window
-    //     .getComputedStyle(document.body)
-    //     .getPropertyValue('--chakra-colors-chakra-body-text'),
-    //   '...',
-    //   color
-    // );
   }, [backgroundColor, color]);
 
   const prefix = 'https://cdn.jsdelivr.net/gh/rupistudio/web@main/public';
