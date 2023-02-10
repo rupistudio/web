@@ -5,12 +5,12 @@ export const seo: Collection['fields'] = [
   {
     type: 'string',
     name: 'title',
-    label: 'Title',
+    label: 'Title (SEO-Friendly 50-70chars.)',
   },
   {
     type: 'string',
     name: 'description',
-    label: 'Description',
+    label: 'Description (SEO-Friendly 150-160chars.)',
     ui: {
       component: 'textarea',
     },
@@ -23,7 +23,7 @@ export const seo: Collection['fields'] = [
   {
     type: 'string',
     name: 'keywords',
-    label: 'Keywords',
+    label: 'Keywords (Anywhere between 5-10 keywords of the most relevant)',
     ui: {
       component: 'textarea',
     },
@@ -36,7 +36,8 @@ export const seo: Collection['fields'] = [
   {
     type: 'object',
     name: 'images',
-    label: 'Images',
+    label:
+      'Images (The image shown when your website is shared on social media)',
     list: true,
     ui: { defaultItem: {} },
     fields: [
@@ -75,9 +76,9 @@ export const seo: Collection['fields'] = [
   {
     type: 'object',
     name: 'additionalLinkTags',
-    label: 'Additional Links',
+    label:
+      'Additional Links (That help search engines better understand your website)',
     list: true,
-    ui: { defaultItem: {} },
     fields: [
       {
         type: 'string',

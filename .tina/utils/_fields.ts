@@ -1,5 +1,5 @@
-import type { Collection, Template } from 'tinacms';
-import { mapOptions, options } from './options';
+import type { Collection,Template } from 'tinacms';
+import { mapOptions,options } from './options';
 
 // Zw7l2
 export const fields: Record<string, Template['fields']> = {
@@ -67,20 +67,6 @@ export const fields: Record<string, Template['fields']> = {
       required: true,
     },
   ],
-  size: [
-    {
-      type: 'string',
-      name: 'width',
-      label: 'Width',
-      options: options.sizes,
-    },
-    {
-      type: 'string',
-      name: 'height',
-      label: 'Height',
-      options: options.sizes,
-    },
-  ],
   image: [
     {
       type: 'object',
@@ -124,6 +110,7 @@ export const fields: Record<string, Template['fields']> = {
     },
   ],
   imageWithPosition: [
+    // used primarily by the SEO collection
     {
       type: 'object',
       name: 'image',
@@ -165,7 +152,107 @@ export const fields: Record<string, Template['fields']> = {
       ],
     },
   ],
+  colors: [
+    {
+      type: 'string',
+      name: 'color',
+      label: 'Text / Line Color',
+      options: options.colors,
+    },
+    {
+      type: 'string',
+      name: 'backgroundColor',
+      label: 'Background Color',
+      options: options.colors,
+    },
+  ],
+  layout: [
+    {
+      type: 'object',
+      name: 'layout',
+      label: 'Layout Settings',
+      ui: { defaultItem: { showHeader: true, showFooter: true } },
+      fields: [
+        {
+          type: 'boolean',
+          name: 'showHeader',
+          label: 'Show Header',
+        },
+
+        {
+          type: 'boolean',
+          name: 'showFooter',
+          label: 'Show Footer',
+        },
+        {
+          type: 'boolean',
+          name: 'showReviews',
+          label: 'Show Reviews',
+        },
+      ],
+    },
+  ],
+  relations: [
+    {
+      type: 'object',
+      name: 'services',
+      label: 'Services',
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          id: item.service,
+          key: item.service,
+          label: item.service,
+        }),
+      },
+      fields: [
+        {
+          type: 'reference',
+          name: 'service',
+          label: 'Service',
+          collections: ['service'],
+        },
+      ],
+    },
+    {
+      type: 'object',
+      name: 'types',
+      label: 'Service Types',
+      list: true,
+      ui: {
+        itemProps: (item) => ({
+          id: item.type,
+          key: item.type,
+          label: item.type,
+        }),
+      },
+      fields: [
+        {
+          type: 'reference',
+          name: 'type',
+          label: 'Types',
+          collections: ['type'],
+        },
+      ],
+    },
+  ],
+  size: [
+    // unused
+    {
+      type: 'string',
+      name: 'width',
+      label: 'Width',
+      options: options.sizes,
+    },
+    {
+      type: 'string',
+      name: 'height',
+      label: 'Height',
+      options: options.sizes,
+    },
+  ],
   space: [
+    // unused
     {
       type: 'object',
       name: 'spacing',
@@ -198,21 +285,8 @@ export const fields: Record<string, Template['fields']> = {
       ],
     },
   ],
-  colors: [
-    {
-      type: 'string',
-      name: 'color',
-      label: 'Text / Line Color',
-      options: options.colors,
-    },
-    {
-      type: 'string',
-      name: 'backgroundColor',
-      label: 'Background Color',
-      options: options.colors,
-    },
-  ],
   typography: [
+    // unused
     {
       type: 'object',
       name: 'typography',
@@ -269,33 +343,8 @@ export const fields: Record<string, Template['fields']> = {
       ],
     },
   ],
-  layout: [
-    {
-      type: 'object',
-      name: 'layout',
-      label: 'Layout Settings',
-      ui: { defaultItem: { showHeader: true, showFooter: true } },
-      fields: [
-        {
-          type: 'boolean',
-          name: 'showHeader',
-          label: 'Show Header',
-        },
-
-        {
-          type: 'boolean',
-          name: 'showFooter',
-          label: 'Show Footer',
-        },
-        {
-          type: 'boolean',
-          name: 'showReviews',
-          label: 'Show Reviews',
-        },
-      ],
-    },
-  ],
   decor: [
+    // unused
     {
       type: 'object',
       name: 'decorative',
@@ -328,51 +377,8 @@ export const fields: Record<string, Template['fields']> = {
       ],
     },
   ],
-  relations: [
-    {
-      type: 'object',
-      name: 'services',
-      label: 'Services',
-      list: true,
-      ui: {
-        itemProps: (item) => ({
-          id: item.service,
-          key: item.service,
-          label: item.service,
-        }),
-      },
-      fields: [
-        {
-          type: 'reference',
-          name: 'service',
-          label: 'Service',
-          collections: ['service'],
-        },
-      ],
-    },
-    {
-      type: 'object',
-      name: 'types',
-      label: 'Service Types',
-      list: true,
-      ui: {
-        itemProps: (item) => ({
-          id: item.type,
-          key: item.type,
-          label: item.type,
-        }),
-      },
-      fields: [
-        {
-          type: 'reference',
-          name: 'type',
-          label: 'Types',
-          collections: ['type'],
-        },
-      ],
-    },
-  ],
   seo: [
+    // unused in favor of inferred seo in page-layout
     {
       type: 'object',
       name: 'pageSEO',
