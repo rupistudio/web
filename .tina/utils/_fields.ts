@@ -14,7 +14,7 @@ export const fields: Record<string, Template['fields']> = {
       type: 'string',
       name: 'description',
       label: 'Page Description (SEO-Friendly 150-160chars.)',
-      required: true,
+      // required: true,
       ui: {
         component: 'textarea',
       },
@@ -31,7 +31,7 @@ export const fields: Record<string, Template['fields']> = {
       type: 'string',
       name: 'description',
       label: 'Page Description (SEO-Friendly 150-160chars.)',
-      required: true,
+      // required: true,
       ui: {
         component: 'textarea',
       },
@@ -76,7 +76,6 @@ export const fields: Record<string, Template['fields']> = {
         defaultItem: {
           src: '/uploads/assets/placeholder-sq.webp',
           alt: 'Placeholder Image',
-          position: 'center center',
         },
       },
       fields: [

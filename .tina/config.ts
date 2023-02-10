@@ -1,5 +1,6 @@
 import { defineConfig } from 'tinacms';
-import { schema } from './schema';
+
+import { page, seo, service, type } from './collections';
 
 // Your hosting provider likely exposes this as an environment variables
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main';
@@ -24,5 +25,7 @@ export default defineConfig({
       publicFolder: 'public',
     },
   },
-  schema,
+  schema: {
+    collections: [page, service, type, seo],
+  },
 });
