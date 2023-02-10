@@ -1,4 +1,4 @@
-// @FIXME: This isn't clickable anymore in the UI
+// @TODO: this doesn't always trigger on hover, investigate
 import { Box, Text, useDisclosure, VStack } from '@chakra-ui/react';
 
 import docLinks from '__data/docs/links.json';

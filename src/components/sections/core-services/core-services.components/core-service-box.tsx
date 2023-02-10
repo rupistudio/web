@@ -2,22 +2,26 @@ import { Box, chakra } from '@chakra-ui/react';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import type { PageSectionsCoreServicesServices } from '.tina';
+import type {
+  PageSectionsCoreServicesServices,
+  ServiceSectionsServiceMenuServicesService,
+} from '.tina';
 
 import { truncate } from '@/utils';
 import { MotionBox } from 'chakra.ui';
 
 const ChLink = chakra(Link);
 
-function getRouteFromId(id: string) {
-  return id.split('.')[0]?.replace('_content/categories/', '');
-}
-
 type CoreServiceBoxProps = {
-  item: PageSectionsCoreServicesServices['service'];
+  // item: PageSectionsCoreServicesServices['service'];
+  item: ServiceSectionsServiceMenuServicesService;
 };
 
 export const CoreServiceBox: React.FC<CoreServiceBoxProps> = (props) => {
+  console.log(
+    // @ts-expect-error @NOTE: internalSys is not accessible because of the type being used
+    props.item?._internalSys?.breadcrumbs[0]
+  );
   return (
     <MotionBox
       key={props.item?.image?.src}
@@ -27,10 +31,7 @@ export const CoreServiceBox: React.FC<CoreServiceBoxProps> = (props) => {
       whileHover={{ y: -10 }}
     >
       <ChLink
-        href={`${getRouteFromId(String(props?.item?.id))?.replace(
-          '/_content/',
-          ''
-        )}`}
+        href={`${props?.item?.id.split('.')[0]?.replace('_content', '')}`}
       >
         {props.item?.image ? (
           <Box w="full" h="full" objectFit="cover">

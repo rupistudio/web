@@ -13,7 +13,6 @@ type LocationCTABlockProps = {
 export const LocationCTA: FC<
   PageSectionsLocationCta | LocationCTABlockProps
 > = (props) => {
-  // @TODO: consider adding address to tina schema
   return (
     <ScrollSection>
       <Box zIndex={1} height={500} display="flex" layerStyle="flex.center">

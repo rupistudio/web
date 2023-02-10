@@ -24,7 +24,7 @@ export const HorizontalParallax: FC<{
   }
 
   return (
-    //  @TODO: @FIXMEL fix type issue
+    //  @FIXME: type issueF
     <>
       {/* <MotionBox style={{ x }} ref={ref} {...props}>
         {children}

@@ -35,7 +35,7 @@ function crispPlugin(userConfig: { crispId: string; enabled: boolean }) {
   };
 }
 
-// @TODO: Add ability to disable tracking:
+// @TODO: Add ability to disable tracking: -- is this done?
 // @link: https://getanalytics.io/plugins/do-not-track/
 
 export const analytics = Analytics({

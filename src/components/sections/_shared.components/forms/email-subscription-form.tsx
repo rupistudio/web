@@ -64,6 +64,7 @@ export const EmailSubscriptionForm = () => {
     //     },
     //   }
     // );
+    console.log('@TODO: handle email subscription logic', email);
   };
   return (
     <chakra.form w="full" p={9} onSubmit={handleSubscribe}>

@@ -65,7 +65,7 @@ export const ServiceBlocks: React.FC<Service> = ({ sections, ...props }) => {
                 <ServiceMenu
                   {...section}
                   key={section.__typename}
-                  category={props?.slug}
+                  category={props?._sys?.breadcrumbs[0]}
                 />
               );
             case 'ServiceSectionsEmailCta':

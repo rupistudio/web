@@ -17,7 +17,7 @@ export const getBaseUrl = () => {
 export function flattenArrayOfObjects<T, U>(arr: T[], key = 'label') {
   if (!arr?.length) throw new Error(`cannot flatten ${JSON.stringify(arr)}`);
   const object = arr?.reduce(
-    // @ts-expect-error: item[key] - @TODO: implicit any - how to type?
+    // @ts-expect-error: item[key] - @TODO: implicit any -must be properly typed
     // eslint-disable-next-line @typescript-eslint/no-unsafe-assignment
     (obj, item) => Object.assign(obj, { [item[key]]: item.value }),
     {}
