@@ -20,7 +20,7 @@ export default defineConfig({
   },
   media: {
     tina: {
-      mediaRoot: 'uploads2',
+      mediaRoot: 'uploads',
       publicFolder: 'public',
     },
   },
