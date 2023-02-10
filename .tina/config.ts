@@ -1,7 +1,7 @@
 import { defineConfig } from 'tinacms';
 import { schema } from './schema';
 
-// Your hosting provider likely exposes this as an environment variable
+// Your hosting provider likely exposes this as an environment variables
 const branch = process.env.HEAD || process.env.VERCEL_GIT_COMMIT_REF || 'main';
 
 export default defineConfig({
