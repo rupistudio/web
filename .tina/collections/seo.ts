@@ -6,6 +6,13 @@ export const seo: Collection['fields'] = [
     type: 'string',
     name: 'title',
     label: 'Title (SEO-Friendly 50-70chars.)',
+    ui: {
+      validate: (value) => {
+        if (value.length > 70) {
+          return `-${value.length - 70}/70`;
+        }
+      },
+    },
   },
   {
     type: 'string',
@@ -13,6 +20,11 @@ export const seo: Collection['fields'] = [
     label: 'Description (SEO-Friendly 150-160chars.)',
     ui: {
       component: 'textarea',
+      validate: (value) => {
+        if (value.length > 160) {
+          return `-${value.length - 160}/160`;
+        }
+      },
     },
   },
   {
