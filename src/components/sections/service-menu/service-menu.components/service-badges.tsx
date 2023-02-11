@@ -38,7 +38,7 @@ export const ServiceBadges: React.FC<{
               <Badge
                 key={`${type?.type?.id}-${i}`}
                 {...badgeStyles}
-                colorScheme="teal"
+                colorScheme="secondary"
                 whiteSpace={['nowrap']}
               >
                 {type?.type?.title}
@@ -50,6 +50,7 @@ export const ServiceBadges: React.FC<{
         ? data?.services?.slice(0, 2).map((service, i) => {
             return (
               <Badge
+                colorScheme="secondary"
                 key={`${service?.service?.id}-${i}`}
                 {...badgeStyles}
                 whiteSpace={['nowrap']}
@@ -59,7 +60,7 @@ export const ServiceBadges: React.FC<{
             );
           })
         : null}
-      <Badge my={1} variant="outline" colorScheme="yellow">
+      <Badge my={1} variant="outline" colorScheme="accent">
         {'+ More'}
       </Badge>
     </Stack>

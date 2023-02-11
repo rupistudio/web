@@ -49,4 +49,16 @@ export const colors: ChakraTheme['colors'] = {
     800: '#ff6c29',
     900: '#ff5a0f',
   },
+  accent: {
+    50: '##ffffff',
+    100: '##fffafa',
+    200: '##ffe0e0',
+    300: '##ffc7c7',
+    400: '##ffadad',
+    500: '##ff7a7a',
+    600: '##ff4747',
+    700: '##ff2e2e',
+    800: '#ff1414',
+    900: '#e00000',
+  },
 };

@@ -19,8 +19,8 @@ export const tokens = {
       _dark: 'secondary.800',
     },
     accent: {
-      default: '#ff7a7a',
-      _dark: '#DDABE4',
+      default: 'accent.700',
+      _dark: 'accent.400',
     },
     error: {
       default: '#FF5F5F',
@@ -43,8 +43,8 @@ export const tokens = {
       _dark: '#5a83d6',
     },
     navLink: {
-      default: 'primary.800',
-      _dark: 'primary.600',
+      default: 'primary.900',
+      _dark: 'primary.700',
     },
     muted: {
       default: 'gray.400',
