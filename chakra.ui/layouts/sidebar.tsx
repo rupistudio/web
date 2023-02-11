@@ -18,7 +18,7 @@ export const Sidebar: React.FC<{ children?: React.ReactNode }> = ({
         top={0}
         w={4}
         onClick={onOpen}
-        _hover={{ bg: 'brand.800' }}
+        _hover={{ bg: 'secondary.800' }}
       />
       <Drawer {...{ isOpen, onOpen, onClose }}>
         <Text as="p" m={0} fontWeight={400} fontSize="1.5rem" lineHeight="2rem">

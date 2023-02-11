@@ -9,13 +9,20 @@ const navLink = {
 export const tokens = {
   colors: {
     bg: {
-      default: '#FFF1E4',
+      default: 'bg.50',
       _dark: '#101819',
     },
-    primary: '#D3B734',
+    barBg: {
+      default: 'bg.100',
+      _dark: '#2D3738',
+    },
+    primary: {
+      default: 'primary.800',
+      _dark: 'primary.600',
+    },
     secondary: {
-      default: '#ffaa7a',
-      _dark: '#FF8E8E',
+      default: 'secondary.300',
+      _dark: 'secondary.800',
     },
     accent: {
       default: '#ff7a7a',
@@ -38,19 +45,18 @@ export const tokens = {
       _dark: '#707B83',
     },
     link: {
-      default: '#3499d4',
-      _dark: '#1482D1',
+      default: '#3469d4',
+      _dark: '#5a83d6',
     },
-    barBg: {
-      default: '#FDE4CC',
-      _dark: '#2D3738',
+    navLink: {
+      default: 'primary.800',
+      _dark: 'primary.600',
     },
-    navLink: Object.assign(navLink),
-    placeholder: {
+    muted: {
       default: 'gray.400',
-      _dark: 'whiteAlpha.300',
+      _dark: 'gray.300',
     },
-    rootBorder: {
+    root: {
       default: 'gray.500',
       _dark: 'gray.700',
     },

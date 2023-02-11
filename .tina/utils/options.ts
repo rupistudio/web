@@ -45,7 +45,7 @@ const colorTokens = [
   'barBg',
   'navLink',
   'placeholder',
-  'rootBorder',
+  'root',
 ].map(mapOptions);
 
 export const options = {

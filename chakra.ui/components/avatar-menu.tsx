@@ -33,7 +33,7 @@ export const AvatarMenu: React.FC<AvatarMenuProps> = ({ user }) => {
             _hover={{ cursor: 'pointer', border: 'lg' }}
             loading="lazy"
             outline="2px solid"
-            outlineColor="brand.400"
+            outlineColor="primary.400"
           />
         ) : (
           <Spinner />

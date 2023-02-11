@@ -15,7 +15,7 @@ export const styles: ChakraTheme['styles'] = {
       whiteSpace: 'normal', // @FIXME: this maybe a hack: text was not wrapping inside divs
     },
     '*, *::before, *::after': {
-      borderColor: 'rootBorder',
+      borderColor: 'root',
       boxSizing: 'border-box',
       wordWrap: 'break-word',
     },
@@ -51,16 +51,16 @@ export const styles: ChakraTheme['styles'] = {
       minH: '100%',
     },
     '*::placeholder': {
-      color: 'placeholder',
+      color: 'muted',
     },
     'input:focus': {
       border: 'inherit',
     },
     'input:focus:invalid': {
-      background: 'rgba(255, 224, 224, 1)',
+      background: 'red.100',
     },
     'input:focus, input:focus:valid': {
-      background: 'rgba(226, 250, 219, 1)',
+      background: 'green.100',
     },
     'a:active, a:focus, a:visited': {
       outline: 0,
@@ -69,10 +69,6 @@ export const styles: ChakraTheme['styles'] = {
       textDecoration: 'none',
       boxShadow: '0 0 0 1px rgba(0, 0, 0, 0) !important',
     },
-
-    // 'a:hover': {
-    //   textDecoration: 'underline',
-    // },
     a: {
       textDecoration: 'none',
       color: 'link',
@@ -103,11 +99,10 @@ export const styles: ChakraTheme['styles'] = {
     },
     '.mobile-nav-link:active, .mobile-nav-link:focused, .mobile-nav-link:visited, ':
       {
-        color: lighten('#D3B734', 0.8),
+        color: 'primary.500',
       },
     '.mobile-nav-link:hover': {
-      color: darken('#D3B734', 0.2),
-      // color: 'blue',
+      color: 'primary.800',
       textDecoration: 'none',
     },
     '.mobile-nav-link': {
@@ -115,7 +110,7 @@ export const styles: ChakraTheme['styles'] = {
     },
     '[data-trustmary-status]': {
       marginBottom: '3rem',
-      bg: 'bg',
+      backgroundColor: 'var(--chakra-colors-chakra-body-bg)',
     },
   }),
 };
