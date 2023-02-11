@@ -1,10 +1,4 @@
 import type { ChakraTheme } from '@chakra-ui/react';
-import { darken, lighten } from 'color2k'; // https://color2k.com/
-
-const navLink = {
-  default: darken('#D3B734', 0.2),
-  _dark: lighten('#D3B734', 0.2),
-};
 
 export const tokens = {
   colors: {

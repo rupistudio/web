@@ -1,6 +1,5 @@
 import type { ChakraTheme } from '@chakra-ui/react';
 import { mode, type StyleFunctionProps } from '@chakra-ui/theme-tools';
-import { darken, lighten } from 'color2k';
 
 export const styles: ChakraTheme['styles'] = {
   global: (props: StyleFunctionProps) => ({
