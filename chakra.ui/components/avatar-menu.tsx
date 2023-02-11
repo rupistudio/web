@@ -1,5 +1,3 @@
-// import { authEventChannel } from '@/utils/event-bus';
-import { onPromise } from '@/utils/fns';
 import {
   Avatar,
   Box,
@@ -10,11 +8,7 @@ import {
   MenuList,
   Spinner,
 } from '@chakra-ui/react';
-// import { signIn, signOut, useSession } from 'next-auth/react';
 import Link from 'next/link';
-import { useEffect } from 'react';
-
-import type { FC } from 'react';
 
 const defaultLinks = [{ label: 'home', href: '/' }];
 
