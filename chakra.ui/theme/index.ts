@@ -18,7 +18,7 @@ export const theme: Partial<ChakraTheme> = extendTheme(
     ...foundations,
     ...typography,
   },
-  withDefaultColorScheme({ colorScheme: 'brand' }),
+  withDefaultColorScheme({ colorScheme: 'primary' }),
   withDefaultProps({
     defaultProps: {
       color: 'body',

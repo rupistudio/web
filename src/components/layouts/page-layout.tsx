@@ -1,19 +1,20 @@
-import { Box, chakra, ChakraProps } from '@chakra-ui/react';
+import { Box,chakra,ChakraProps } from '@chakra-ui/react';
 import { SkipNavContent } from '@chakra-ui/skip-nav';
 import { NextSeo } from 'next-seo';
 import Script from 'next/script';
-import { useEffect, useRef } from 'react';
+import { useEffect,useRef } from 'react';
 
-import { SocialShare, Title } from '@/components';
+
+import { SocialShare,Title } from '@/components';
 import {
-  Footer,
-  Header,
-  MotionBox,
-  Sidebar,
-  transitionDown as variants,
+Footer,
+Header,
+MotionBox,
+Sidebar,
+transitionDown as variants
 } from 'chakra.ui';
 
-import { fileExtension, getImageDetails, isBrowser, isProd } from '@/utils';
+import { fileExtension,getImageDetails,isBrowser,isProd } from '@/utils';
 import { SEOConfig } from '@/utils/seo';
 
 type TinaSeoImage = {
