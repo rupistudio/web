@@ -20,6 +20,7 @@ import {
   HeroBlock,
   LocationCTA,
   PageLayout,
+  ReviewsCTA,
   ServiceMenu,
   SimpleContent,
   TitleBlock,
@@ -80,6 +81,8 @@ export const PageBlocks: React.FC<Page> = ({ sections, ...props }) => {
               return <ServiceMenu {...section} key={section.__typename} />;
             case 'PageSectionsEmailCta':
               return <EmailCTA {...section} key={section.__typename} />;
+            case 'PageSectionsReviewsCta':
+              return <ReviewsCTA {...section} key={section.__typename} />;
           }
         })}
     </>

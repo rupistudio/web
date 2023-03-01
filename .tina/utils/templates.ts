@@ -10,6 +10,7 @@ export const templates: Record<string, Template[]> = {
     blocks.coreServices,
     blocks.locationCta,
     blocks.contact,
+    blocks.reviewsCta,
   ],
   service: [
     blocks.title,
